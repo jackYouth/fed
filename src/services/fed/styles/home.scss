@@ -1,0 +1,74 @@
+@import "../../../styles/s_common.scss";
+
+.home {
+  img {
+    display: block;
+    margin: 185px auto 0;
+    margin-bottom: 107px;
+  }
+  p {
+    @include s_fontDemo(25px, 48px, $font-00);
+    text-align: center;
+  }
+  .title {
+    font-size: 38px;
+  }
+  .tips {
+    margin-bottom: 76px;
+  }
+  .use-data {
+    margin-bottom: 88px;
+  }
+  h1 {
+    font-weight: normal;
+    text-align: center;
+    @include s_fontDemo(36px, 36px, $font-ff);
+    margin-bottom: 90px;
+  }
+  .button {
+    width: 700px;
+    height: 80px;
+    border-radius: 10px;
+    background: $theme;
+    text-align: center;
+    margin: 0 auto;
+    @include s_fontDemo(26px, 80px, $font-ff);
+  }
+  .not-new-customer {
+    .use-data {
+      margin-top: 60px;
+    }
+    .selected-item {
+      width: 700px;
+      border-radius: 10px;
+      background: #fff;
+      text-align: center;
+      margin: 0 auto 25px;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+      position: relative;
+      overflow: hidden;
+      .am-icon {
+        left: 170px;
+        @include s_middle;
+      }
+      .text {
+        line-height: 80px;
+        font-size: 30px;
+        float: left;
+        margin-left: 264px;
+      }
+    }
+    .use-tips {
+      padding-top: 40px;
+      padding-bottom: 40px;
+      margin-bottom: 60px;
+      p {
+        line-height: 50px;
+        span {
+          font-size: 32px;
+          color: $theme;
+        }
+      }
+    }
+  }
+}
