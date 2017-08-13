@@ -1,0 +1,53 @@
+@import '../common.scss';
+
+.information {
+  margin: 24px;
+  padding: 40px;
+  box-sizing: border-box;
+  background: #fff;
+  .header {
+    padding: 40px;
+    height: 290px;
+    position: relative;
+    background: url(../../img/information_header.png);
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    p {
+      position: absolute;
+      @include s_fontDemo(26px, 60px, #fff);
+      background: rgba(0, 0, 0, .3);
+      text-align: center;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+    }
+  }
+  ul {
+    li {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      @include s_border_t;
+      overflow: hidden;
+      position: relative;
+      img {
+        float: left;
+        @include s_blockDemo(100px, 100px);
+        margin-right: 40px;
+      }
+      p {
+        &:first-of-type {
+          float: left;
+          width: 400px;
+          @include s_fontDemo(20px, 37px, $font-4a);
+        }
+        &.coupon {
+          padding: 10px 25px;
+          @include s_fontDemo(16px, 24px, #fff);
+          background: $fed_theme;
+          @include s_middle;
+          right: 0;
+        }
+      }
+    }
+  }
+}

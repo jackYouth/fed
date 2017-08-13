@@ -1,0 +1,203 @@
+@import "../common.scss";
+
+.goods {
+  .container {
+    padding: 0 20px;
+    .selectes {
+      background: #fff;
+      margin: -40px 0 20px;
+      text-align: center;
+      @include s_fontDemo(24px, 80px, $font-4a);
+      position: relative;
+      z-index: 1;
+      .active {
+        color: $fed_theme;
+      }
+    }
+    .notice {
+      position: relative;
+      padding-left: 10px;
+      margin-bottom: 20px;
+      @include s_fontDemo(20px, 28px, $font-4a);
+      span {
+        float: left;
+        @include s_blockDemo(10px, 10px);
+        border-radius: 100%;
+        background: $fed_theme;
+        margin-right: 20px;
+        margin-top: 10px;
+      }
+    }
+  }
+  .good-item {
+    padding: 0 20px;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+    display: flex;
+    margin-bottom: 25px;
+    .img-container {
+      @include s_blockDemo(156px, 156px);
+      margin-right: 45px;
+      img {
+        height: 156px;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .right {
+      flex: 1;
+      p {
+        &:nth-of-type(1) {
+          @include s_fontDemo(24px, 24px, $font-4a);
+          margin-bottom: 5px;
+        }
+        &:nth-of-type(2) {
+          @include s_fontDemo(20px, 24px, #9b9b9b);
+        }
+        &:nth-of-type(3) {
+          @include s_fontDemo(20px, 24px, $fed_theme);
+          padding-top: 10px;
+          float: left;
+          span {
+            font-size: 36px;
+          }
+        }
+      }
+      .discount {
+        display: block;
+        text-align: center;
+        width: 100px;
+        margin-top: 5px;
+        @include s_fontDemo(20px, 34px, #f6a623);
+        border: 1px solid #f6a623;
+      }
+      .spec {
+        float: right;
+        @include s_blockDemo(100px, 34px);
+        @include s_fontDemo(20px, 34px, $fed_theme);
+        border: 1px solid $fed_theme;
+        text-align: center;
+        border-radius: 17px;
+      }
+      .add-good {
+        float: right;
+      }
+    }
+  }
+
+  .footer {
+    height: 80px;
+    border-radius: 42px;
+    background: rgba(0, 0, 0, .5);
+    padding: 4px 4px 0;
+    @include s_center;
+    bottom: 30px;
+    width: 95%;
+    .left {
+      float: left;
+      margin-right: 50px;
+      position: relative;
+      background: #fff;
+      border-radius: 100%;
+      @include s_blockDemo(76px, 76px);
+      span {
+        @include s_blockDemo(20px, 20px);
+        @include s_fontDemo(16px, 20px, #fff);
+        border-radius: 100%;
+        border: 1px solid #fff;
+        background: $fed_theme;
+        text-align: center;
+        position: absolute;
+        right: -5px;
+        top: -5px;
+      }
+      .am-icon {
+        @include s_allCenter;
+      }
+    }
+    .center {
+      float: left;
+      p {
+        &:first-of-type {
+          @include s_fontDemo(26px, 36px, #fff);
+        }
+        &:last-of-type {
+          @include s_fontDemo(18px, 26px, #fff);
+        }
+      }
+    }
+    .right {
+      float: right;
+      width: 160px;
+      text-align: center;
+      background: #fff;
+      border-radius: 38px;
+      @include s_fontDemo(24px, 76px, #616e74);
+    }
+  }
+}
+
+.specification {
+  padding: 45px;
+  background: #fff;
+  @include s_allCenter;
+  width: 80%;
+  .title {
+    @include s_fontDemo(26px, 36px, $font-4a);
+    margin-bottom: 15px;
+    overflow: hidden;
+    span {
+      float: left;
+      &:last-of-type {
+        @include s_blockDemo(112px, 36px);
+        background: #fdece8;
+        @include s_fontDemo(16px, 36px, $fed_theme);
+        text-align: center;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        border-radius: 18px;
+      }
+    }
+  }
+  .discription {
+    @include s_fontDemo(20px, 24px, #9b9b9b);
+    margin-bottom: 30px;
+  }
+  ul {
+    overflow: hidden;
+    margin-bottom: 44px;
+    margin-top: 33px;
+    li {
+      @include s_blockDemo(82px, 34px);
+      text-align: center;
+      @include s_fontDemo(16px, 34px, #9b9b9b);
+      border: 1px solid #9b9b9b;
+      margin-right: 10px;
+      float: left;
+      border-radius: 17px;
+      &.active {
+        border-color: $fed_theme;
+        color: $fed_theme;
+        background: #fdece8;
+      }
+    }
+  }
+  .footer {
+    padding-bottom: 45px;
+    p:first-child {
+      float: left;
+      @include s_fontDemo(18px, 34px, #9b9b9b);
+      span {
+        font-size: 38px;
+      }
+    }
+    p:last-of-type{
+      float: right;
+      @include s_blockDemo(132px, 38px);
+      @include s_fontDemo(18px, 38px, #fff);
+      background: $fed_theme;
+      text-align: center;
+    }
+  }
+}

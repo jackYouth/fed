@@ -1,0 +1,48 @@
+@import "../common.scss";
+
+.pay-suc {
+
+  .common-header {
+    background: #09bb07;
+  }
+  .container {
+    height: 50%;
+    padding-top: 200px;
+    margin: -40px 24px 200px;
+    box-sizing: border-box;
+    background: #fff;
+    position: relative;
+    z-index: 1;
+    p {
+      &:nth-of-type(1) {
+        @include s_blockDemo(220px, 50px);
+        @include s_fontDemo(36px, 50px, $font-4a);
+        margin: 0 auto 50px;
+        text-align: right;
+        .am-icon {
+          float: left;
+          margin-top: 5px;
+        }
+      }
+      &:nth-of-type(2) {
+        @include s_fontDemo(24px, 56px, $fed_theme);
+        text-align: center;
+        margin-bottom: 200px;
+        span {
+          font-size: 56px;
+        }
+      }
+      &:nth-of-type(3) {
+        @include s_blockDemo(278px, 56px);
+        @include s_fontDemo(20px, 56px, #fff);
+        margin: 0 auto;
+        text-align: center;
+        background: #09bb07;
+      }
+    }
+  }
+  .fed-button {
+    width: 90%;
+    background: #09bb07;
+  }
+}

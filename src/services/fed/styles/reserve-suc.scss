@@ -1,0 +1,40 @@
+@import "./common.scss";
+
+.reserve-suc {
+  .container {
+    margin-left: 60px;
+    margin-right: 60px;
+    height: 820px;
+    background-color: #fff;
+    margin-top: -45px;
+    position: relative;
+    z-index: 1;
+    .content {
+      @include s_allCenter;
+      overflow: hidden;
+      .top {
+        overflow: hidden;
+        color: #4a4a4a;
+        padding-bottom: 57px;
+        width: 270px;
+        margin: 0 auto;
+        .am-icon {
+          float: left;
+          transform: translateY(5px);
+        }
+        span {
+          margin-left: 20px;
+          @include s_fontDemo(50px, 50px, $font-4a);
+        }
+      }
+      .bottom {
+        width: 360px;
+        @include s_fontDemo(24px, 33px, $font-4a);
+        text-align: center;
+      }
+    }
+  }
+  .fed-button {
+    margin-top: 50px;
+  }
+}

@@ -1,0 +1,79 @@
+@import "../../../styles/s_common.scss";
+
+.set-konwledge {
+  padding: 0 25px;
+  .header {
+    .select-header-item {
+      display: inline-block;
+      width: 25%;
+      @include s_fontDemo(22px, 88px, $font-00);
+      &.in-use {
+        @include s_fontDemo(24px, 88px, $font-4a);
+        text-align: right;
+        span {
+          color: $font-d9;
+        }
+      }
+    }
+  }
+  .set-knowledge-list {
+    .set-knowledge-item {
+      border-left: 4px solid $theme;
+      padding: 5px 30px 10px 45px;
+      padding-right: 30px;
+      background: $bg-ff;
+      overflow: hidden;
+      margin-bottom: 20px;
+      display: flex;
+      .item-left {
+        flex: 1;
+        .item-title {
+          @include s_fontDemo(24px, 40px, $font-4a);
+        }
+        .item-content {
+          @include s_fontDemo(22px, 26px, $font-9b);
+          width: 100%;
+        }
+        .item-num {
+          @include s_fontDemo(20px, 40px, $font-4a);
+          span:first-child {
+            font-size: 32px;
+            line-height: 50px;
+          }
+          span:last-child {
+            display: inline-block;
+            border:1px solid #4a4a4a;
+            border-radius:7px;
+            width:68px;
+            height:28px;
+            @include s_fontDemo(18px, 28px, $font-4a);
+            text-align: center;
+          }
+        }
+      }
+      .item-right {
+        width: 160px;
+        display: flex;
+        align-items: center;
+        @include s_fontDemo(24px, 24px, $font-4a);
+        .am-icon {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+  .return-button {
+    text-align: center;
+    background: none;
+    border: 1px solid $font-4a;
+    @include s_center;
+    bottom: 120px;
+  }
+  .set-button {
+    text-align: center;
+    background: $theme;
+    color: $font-ff;
+    @include s_center;
+    bottom: 20px;
+  }
+}

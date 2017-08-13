@@ -1,0 +1,24 @@
+@import "../common.scss";
+
+.information-inner {
+  margin: 24px;
+  p {
+    &:nth-of-type(1) {
+      @include s_fontDemo(36px, 45px, $font-4a);
+    }
+    &:nth-of-type(2) {
+      @include s_fontDemo(24px, 36px, #9b9b9b);
+      margin-bottom: 35px;
+    }
+    &:nth-of-type(3) {
+      @include s_fontDemo(24px, 28px, #9b9b9b);
+    }
+  }
+  .content {
+    height: 614px;
+    @include s_fontDemo(48px, 614px, #9b9b9b);
+    margin-bottom: 20px;
+    text-align: center;
+    background:rgba(216,216,216,0.35);
+  }
+}

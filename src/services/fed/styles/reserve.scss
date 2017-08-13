@@ -1,0 +1,111 @@
+@import "./common.scss";
+
+.reserve {
+  .container {
+    margin-left: 60px;
+    margin-right: 60px;
+    padding-bottom: 40px;
+    background-color: #fff;
+    margin-top: -45px;
+    position: relative;
+    z-index: 1;
+    .list-item {
+      height: 90px;
+      @include s_border_b;
+      position: relative;
+      &:first-of-type {
+        div {
+          width: 50%;
+          height: 90px;
+          float: left;
+          position: relative;
+          p {
+            @include s_blockDemo(120px, 48px);
+            @include s_fontDemo(28px, 48px, $font-4a);
+            @include s_allCenter;
+          }
+        }
+      }
+      @include s_fontDemo(24px, 90px, #9b9b9b);
+      .title {
+        margin-left: 70px;
+        margin-right: 43px;
+        height: 90px;
+        float: left;
+      }
+      .content {
+        width: 326px;
+        float: left;
+        position: relative;
+        p {
+          position: relative;
+          height: 88px;
+          padding-left: 10px;
+          .am-icon {
+            @include s_middle;
+            right: -50px;
+            color: #ef461b;
+          }
+          input {
+            @include s_fontDemo(24px, 86px, $font-4a);
+            width: 50px;
+            text-align: right;
+            float: left;
+            margin-right: 5px;
+          }
+          span {
+            @include s_fontDemo(24px, 90px, $font-4a);
+          }
+        }
+        ul {
+          padding-left: 10px;
+          position: absolute;
+          background: #fff;
+          width: 100%;
+          z-index: 1;
+          @include s_border;
+          border-top: none;
+          // box-shadow: 0px 0px 5px rgba(0, 0, 0, .3) inset;
+          li {
+            height: 90px;
+            position: relative;
+            @include s_fontDemo(24px, 90px, $font-4a);
+          }
+        }
+      }
+    }
+  }
+  .options {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    margin-left: 70px;
+    margin-right: 43px;
+    .title {
+      padding-bottom: 28px;
+      @include s_fontDemo(24px, 24px, #9b9b9b);
+    }
+    ul {
+      overflow: hidden;
+      li {
+        overflow: hidden;
+        float: left;
+        width: 33.3333%;
+        p:first-of-type {
+          border: 1px solid #9b9b9b;
+          @include s_blockDemo(26px, 26px);
+          position: relative;
+          margin-right: 20px;
+          float: left;
+          span {
+            @include s_allCenter;
+            @include s_blockDemo(16px, 16px);
+            background: #ef461b;
+          }
+        }
+        p:last-of-type {
+          @include s_fontDemo(24px, 24px, #4a4a4a);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../styles/s_common.scss";
+
+.common-header {
+  height: 200px;
+  position: relative;
+  background: #ef461b;
+  .content {
+    height: 60px;
+    width: 450px;
+    @include s_allCenter;
+    .am-icon {
+      float: left;
+      -webkit-transform: translateY(-14px);
+              transform: translateY(-14px);
+    }
+    span {
+      float: right;
+      @include s_fontDemo(40px, 40px, #fff);
+    }
+  }
+}

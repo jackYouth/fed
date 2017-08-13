@@ -16,16 +16,24 @@ $font-99: #999;
 $font-66: #666;
 $font-33: #333;
 $font-f48: #ff4848;
+// fed
 $font-00: #000;
+$font-4a: #4a4a4a;
+$font-d9: #d9443e;
+$font-9b: #9b9b9b;
+$font-ef: #ef461b;
 
 /* 背景三级灰度*/
 $bg-ff: #fff;
 $bg-f8: #f8f8f8;
-$bg-f3: #f3f3f4;
+$bg-f5: #f5f5f6;
 
 /* 边框、分割线两级灰度*/
 $border-eb: #ebebeb;
 $border-e5: #e5e5e5;
+// fed
+$border-97: #979797;
+
 
 
 /*定义公共的代码块*/
@@ -70,6 +78,9 @@ $border-e5: #e5e5e5;
     height: $h;
 }
 /* 定义默认的border*/
+@mixin s_border {
+  border: 1px solid $border-e5;
+}
 @mixin s_border_b {
   border-bottom: 1px solid $border-e5;
 }
@@ -83,41 +94,47 @@ $border-e5: #e5e5e5;
   border-right: 1px solid $border-e5;
 }
 
-/* 全局button的固定样式*/
-.s-button {
-  margin-bottom: 40px;
-  padding-top: 25px;
-  &.bottom {
-    @include s_center;
-    position: fixed;
-    bottom: 0;
-    z-index: 10;
-    width: 100%;
-  }
-  p {
-    background:$border-e5;
-    border-radius:4px;
-    width:90%;
-    height:90px;
-    font-size:36px;
-    color:$font-ff;
-    line-height: 90px;
-    text-align: center;
-    margin: 0 auto;
-    &.active {
-      background: $theme;
-    }
-  }
+// fed 固定样式
+.fed-button {
+  @include s_blockDemo(560px, 80px);
+  background: #ef461b;
+  margin: 0 auto;
+  @include s_fontDemo(28px, 80px, #fff);
+  text-align: center;
 }
 
+
+
+/* 全局button的固定样式*/
+$fed_theme: #ef461b;
 .s_container {
   @include s_blockDemo(700px, 80px);
   @include s_fontDemo(24px, 80px, #000);
   border-radius: 10px;
   background: #fff;
   margin: 0 auto;
+  font-weight: normal;
   .am-icon {
     float: left;
+  }
+}
+
+.s_title {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 33px;
+  height: 30px;
+  p {
+    height: 14px;
+    @include s_border_b;
+  }
+  h1 {
+    @include s_fontDemo(22px, 30px, $font-4a);
+    @include s_allCenter;
+    text-align: center;
+    font-weight: normal;
+    width: 180px;
+    background: $bg-f5;
   }
 }
 
@@ -164,6 +181,12 @@ $border-e5: #e5e5e5;
   color: $font-33;
 }
 
+// component 默认样式
+.mask-container  .content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+}
 
 body,
 dd,
