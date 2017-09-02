@@ -1,0 +1,111 @@
+@import "../common.scss";
+
+.my-achieve {
+  padding: 25px;
+  .my-achieve-slogan {
+    margin-bottom: 35px;
+    overflow: hidden;
+    p {
+      @include s_blockDemo(80px, 80px);
+      margin-right: 45px;
+      position: relative;
+      float: left;
+      background:#ffffff;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+      border-radius:10px;
+      .am-icon {
+        @include s_allCenter;
+      }
+    }
+    span {
+      float: left;
+      @include s_fontDemo(24px, 80px, #000);
+    }
+  }
+  .achieve-list {
+    overflow: hidden;
+    li {
+      margin-bottom: 25px;
+      padding-left: 30px;
+      background:#ffffff;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+      border-radius:10px;
+      .am-icon {
+        float: left;
+        margin-right: 30px;
+        margin-top: 18px;
+      }
+      .top {
+        overflow: hidden;
+        span {
+          float: left;
+          @include s_fontDemo(24px, 80px, $font-4a);
+          &:last-of-type {
+            float: right;
+            color: #09bb07;
+            margin-right: 30px;
+          }
+        }
+      }
+      .bottom {
+        @include s_fontDemo(24px, 80px, $font-4a);
+        span {
+          float: left;
+        }
+        .bottom-item {
+          overflow: hidden;
+          .left {
+            float: left;
+            width: 50%;
+            h4 {
+              @include s_fontDemo(24px, 24px, #09bb07);
+              margin-bottom: 18px;
+              font-weight: normal;
+              &:nth-of-type(1) {
+                margin-bottom: 20px;
+              }
+            }
+            p {
+              @include s_fontDemo(36px, 36px, #000);
+              margin-bottom: 35px;
+              line-height: 70px;
+              span {
+                font-size: 70px;
+              }
+              &:last-of-type {
+                line-height: 28px;
+                margin-bottom: 23px;
+              }
+            }
+          }
+        }
+        .medal {
+          height: 90px;
+          border-top: 1px solid #e5e5e5;
+          .am-icon {
+            margin-right: 0px;
+          }
+          span {
+            line-height: 90px;
+            float: left;
+            &:nth-of-type(1) {
+              color: #e29431;
+              margin-left: 20px;
+            }
+            &:nth-of-type(3) {
+              color: #e29431;
+              margin-left: 50px;
+              margin-top: 25px;
+              line-height: 40px;
+              @include s_blockDemo(154px, 40px);
+              background: #09bb07;
+              border-radius: 20px;
+              text-align: center;
+              color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}

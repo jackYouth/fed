@@ -1,0 +1,81 @@
+@import "../common.scss";
+
+.self-course {
+  padding-left: 25px;
+  padding-right: 25px;
+  .header {
+    height: 124px;
+    margin-top: 25px;
+    box-shadow:0 1px 4px 0 rgba(0,0,0,0.15);
+    border-radius:4px;
+    .am-list-content {
+      padding-left: 30px;
+      color: #0b3688;
+    }
+    .am-list-extra {
+      p {
+        .am-icon {
+          float: left;
+          margin-right: 15px;
+          margin-top: 27px;
+        }
+        span {
+          float: left;
+          color: #0b3688;
+          line-height: 124px;
+        }
+      }
+    }
+  }
+  .warning {
+    overflow: hidden;
+    .am-icon {
+      float: left;
+      margin-top: 25px;
+      margin-right: 10px;
+      margin-left: 5px;
+    }
+    span {
+      float: left;
+      @include s_fontDemo(22px, 82px, #d81e06);
+    }
+  }
+  .banner {
+    margin-bottom: 25px;
+    overflow: hidden;
+    li {
+      width: 48%;
+      height: 250px;
+      background: #fff;
+      padding-top: 80px;
+      float: right;
+      .am-icon {
+        display: block;
+        margin: 0 auto 50px;
+      }
+      p {
+        @include s_fontDemo(26px, 26px, #0b3688);
+        text-align: center;
+      }
+      &:first-of-type {
+        float: left;
+      }
+    }
+  }
+  .bottom {
+    box-shadow:0 1px 4px 0 rgba(0,0,0,0.15);
+    border-radius:4px;
+    padding-left: 90px;
+    background: #fff;
+    overflow: hidden;
+    img {
+      float: left;
+      margin-right: 50px;
+      margin-top: 25px;
+    }
+    span {
+      float: left;
+      @include s_fontDemo(24px, 120px, #9b9b9b);
+    }
+  }
+}

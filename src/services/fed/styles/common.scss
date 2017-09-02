@@ -1,5 +1,9 @@
 @import "../../../styles/s_common.scss";
 
+// fed 固定样式
+
+$fed_theme: #ef461b;
+
 .common-header {
   height: 200px;
   position: relative;
@@ -17,5 +21,62 @@
       float: right;
       @include s_fontDemo(40px, 40px, #fff);
     }
+  }
+}
+
+.hi-header {
+  height: 100px;
+  padding-left: 35px;
+  @include s_fontDemo(28px, 100px, #000);
+  background: #fff;
+  @include s_border_b;
+  margin-bottom: 25px;
+  img {
+    float: left;
+    margin-right: 20px;
+    margin-top: 20px;
+  }
+  span {
+    float: left;
+  }
+}
+
+.fed-button {
+  @include s_blockDemo(560px, 80px);
+  background: #ef461b;
+  margin: 0 auto;
+  @include s_fontDemo(28px, 80px, #fff);
+  text-align: center;
+  box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+  border-radius:10px;
+}
+
+.education-bg {
+  background: #0b3688 !important;
+}
+
+.point-green {
+  @include s_blockDemo(16px, 16px);
+  background: #09bb07;
+  float: left;
+  border-radius: 100%;
+  margin-right: 25px;
+}
+
+.slogan {
+  height: 140px;
+  border: 1px dashed $fed_theme;
+  text-align: center;
+  padding-top: 28px;
+  margin-bottom: 25px;
+  h1 {
+    @include s_fontDemo(42px, 58px, $fed_theme);
+    margin-bottom: 15px;
+    span {
+      margin-top: -15px;
+    }
+  }
+  p {
+    @include s_fontDemo(28px, 40px, $fed_theme);
   }
 }

@@ -12,21 +12,21 @@ const service = [
 ]
 
 const carouselDatas = [
-  { bg: require('../img/waimai_carousel1.png'), title: '私厨餐厅', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 1 },
-  { bg: require('../img/waimai_carousel1.png'), title: '星厨', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 2 },
-  { bg: require('../img/waimai_carousel1.png'), title: '我爱厨房', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 3 },
-  { bg: require('../img/waimai_carousel1.png'), title: '东北大菜', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 4 },
-  { bg: require('../img/waimai_carousel1.png'), title: '私房龙虾', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 5 },
-  { bg: require('../img/waimai_carousel1.png'), title: '江边城外', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 6 },
+  { bg: require('../img/business_carousel1.png'), title: '私厨餐厅', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 1 },
+  { bg: require('../img/business_carousel1.png'), title: '星厨', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 2 },
+  { bg: require('../img/business_carousel1.png'), title: '我爱厨房', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 3 },
+  { bg: require('../img/business_carousel1.png'), title: '东北大菜', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 4 },
+  { bg: require('../img/business_carousel1.png'), title: '私房龙虾', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 5 },
+  { bg: require('../img/business_carousel1.png'), title: '江边城外', text: '安静优雅的用餐环境 每平米用餐人数在1.68以内', id: 6 },
 ]
 
 const featureDatas = [
-  { bg: require('../img/waimai_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 1 },
-  { bg: require('../img/waimai_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 2 },
-  { bg: require('../img/waimai_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 3 },
-  { bg: require('../img/waimai_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 4 },
-  { bg: require('../img/waimai_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 5 },
-  { bg: require('../img/waimai_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 6 },
+  { bg: require('../img/business_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 1 },
+  { bg: require('../img/business_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 2 },
+  { bg: require('../img/business_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 3 },
+  { bg: require('../img/business_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 4 },
+  { bg: require('../img/business_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 5 },
+  { bg: require('../img/business_carousel1.png'), price: '87¥', title: '菜品名称', text: ['粤菜', '杭帮菜', '鲁菜', '皖菜'], id: 6 },
 ]
 
 

@@ -1,0 +1,59 @@
+@import "../common.scss";
+
+.business-address {
+  .bg {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  .selectes {
+    background: #fff;
+    margin-left: 23px;
+    margin-right: 23px;
+    text-align: center;
+    @include s_fontDemo(24px, 80px, #9b9b9b);
+    margin-bottom: 20px;
+    .active {
+      color: #ef461b;
+    }
+  }
+  .info {
+    padding: 37px 40px 32px 60px;
+    overflow: hidden;
+    position: relative;
+    background: #fff;
+    margin-left: 23px;
+    margin-right: 23px;
+    .left {
+      float: left;
+      p {
+        @include s_fontDemo(20px, 36px, $font-4a);
+        .am-icon {
+          float: left;
+          margin-right: 20px;
+          transform: translateY(5px);
+        }
+      }
+    }
+    .site, .phone {
+      @include s_middle;
+      @include s_blockDemo(80px, 70px);
+      box-shadow:0 2px 3px 0 rgba(0,0,0,0.09);
+      border-radius: 100%;
+      padding-top: 10px;
+      .am-icon {
+        display: block;
+        margin: 0 auto;
+      }
+      p {
+        text-align: center;
+        @include s_fontDemo(16px, 36px, #ef461b);
+      }
+    }
+    .site {
+      right: 170px;
+    }
+    .phone {
+      right: 60px;
+    }
+  }
+}

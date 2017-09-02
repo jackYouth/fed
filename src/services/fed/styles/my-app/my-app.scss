@@ -1,0 +1,187 @@
+@import "../common.scss";
+
+.my-app {
+  .header {
+    padding: 20px 50px;
+    background: #fff;
+    @include s_border_b;
+    margin-bottom: 35px;
+    overflow: hidden;
+    img {
+      @include s_blockDemo(60px, 60px);
+      margin-right: 25px;
+      float: left;
+    }
+    span {
+      float: left;
+      @include s_fontDemo(30px, 60px, #000);
+    }
+  }
+}
+
+.apps {
+  padding-left: 20px;
+  .app-item {
+    width: 20%;
+    box-sizing: border-box;
+    float: left;
+    padding-right: 20px;
+    position: relative;
+    p:nth-of-type(1) {
+      // @include s_blockDemo(120px, 120px);
+      background: #fff;
+      position: relative;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.00);
+      border-radius:10px;
+      padding-top: 100%;
+      .am-icon {
+        @include s_allCenter;
+      }
+      img {
+        @include s_allCenter;
+      }
+    }
+    p:nth-of-type(2) {
+      @include s_fontDemo(24px, 64px, $font-4a);
+      width: 120px;
+      text-align: center;
+    }
+    p:nth-of-type(3) {
+      @include s_blockDemo(58px, 30px);
+      background:#f6384f;
+      @include s_fontDemo(18px, 30px, #fff);
+      text-align: center;
+      border-radius:8px;
+      position: absolute;
+      right: 5px;
+      top: -15px;
+      z-index: 1;
+    }
+  }
+}
+
+.my-attention {
+  margin: 20px;
+  .header {
+    margin-bottom: 27px;
+    padding-left: 10px;
+    box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+    border-radius:10px;
+    height:78px;
+    background: #fff;
+    .am-icon {
+      margin-top: 15px;
+      margin-right: 20px;
+      float: left;
+    }
+    span {
+      float: left;
+      @include s_fontDemo(24px, 78px, $font-4a);
+    }
+  }
+  .middle {
+    overflow: hidden;
+    p {
+      float: left;
+      &:nth-of-type(1) {
+        padding-top: 18px;
+        padding-left: 10px;
+        span {
+          @include s_blockDemo(10px, 10px);
+          display: inline-block;
+          background: #09bb07;
+          border-radius: 100%;
+          margin-right: 10px;
+        }
+      }
+      &:nth-of-type(2) {
+        @include s_fontDemo(26px, 46px, $font-4a);
+        margin-bottom: 20px;
+      }
+      &:nth-of-type(3) {
+        float: right;
+        margin-right: 5px;
+        margin-bottom: 10px;
+        @include s_blockDemo(160px, 50px);
+        background:#09bb07;
+        span {
+          float: left;
+          padding-left: 30px;
+          padding-right: 10px;
+          @include s_fontDemo(18px, 50px, #fff);
+        }
+        .am-icon {
+          float: left;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+  .bottom {
+    .selectes {
+      @include s_fontDemo(18px, 18px, $font-4a);
+      margin-bottom: 35px;
+      overflow: hidden;
+      li {
+        float: left;
+        margin-right: 30px;
+        .am-icon {
+          float: left;
+          margin-top: -7px;
+        }
+        span {
+          float: left;
+        }
+      }
+    }
+  }
+  .fed-button {
+    @include s_center;
+    bottom: 30px;
+    background:#09bb07;
+    box-shadow:0 2px 4px 0 rgba(0,0,0,0.15);
+    border-radius:10px;
+    width: 90%;
+  }
+}
+
+.bussiness-search {
+  .header {
+    padding-top: 180px;
+    padding-bottom: 30px;
+    background: none;
+    height: auto;
+    box-shadow: none;
+    .title {
+      @include s_fontDemo(64px, 90px, #09bb07);
+      margin-bottom: 90px;
+      text-align: center;
+    }
+    .search {
+      margin-right: 10px;
+      height: 70px;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+      border-radius:10px;
+      background: #fff;
+      input {
+        padding-left: 23px;
+        padding-top: 10px;
+        float: left;
+        width: 500px;
+        @include s_fontDemo(20px, 45px, $font-4a);
+      }
+      p {
+        float: right;
+        width: 120px;
+        height: 100%;
+        background: #09bb07;
+        position: relative;
+        .am-icon {
+          margin-top: 0;
+          margin-right: 0;
+          @include s_allCenter;
+        }
+      }
+    }
+  }
+}

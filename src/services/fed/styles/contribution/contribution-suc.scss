@@ -1,0 +1,31 @@
+@import "../common.scss";
+
+.contribution-suc {
+  .hi-header {
+    margin-bottom: 180px;
+  }
+  .am-icon {
+    display: block;
+    margin: 0 auto 80px;
+    @include s_blockDemo(260px, 260px);
+  }
+  p {
+    &:nth-of-type(1) {
+      @include s_fontDemo(36px, 36px, #000);
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    &:nth-of-type(2) {
+      @include s_fontDemo(25px, 25px, #000);
+      text-align: center;
+      width: 630px;
+      margin: 0 auto;
+    }
+    &.fed-button {
+      @include s_center;
+      bottom: 30px;
+      width: 90%;
+      background: #09bb07;
+    }
+  }
+}

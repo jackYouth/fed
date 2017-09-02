@@ -1,5 +1,6 @@
 @import "./common.scss";
 
+
 .reserve {
   .container {
     margin-left: 60px;
@@ -10,7 +11,7 @@
     position: relative;
     z-index: 1;
     .list-item {
-      height: 90px;
+      height: 89px;
       @include s_border_b;
       position: relative;
       &:first-of-type {
@@ -29,7 +30,7 @@
       @include s_fontDemo(24px, 90px, #9b9b9b);
       .title {
         margin-left: 70px;
-        margin-right: 43px;
+        width: 150px;
         height: 90px;
         float: left;
       }
@@ -90,6 +91,9 @@
         overflow: hidden;
         float: left;
         width: 33.3333%;
+        p {
+          box-sizing: border-box;
+        }
         p:first-of-type {
           border: 1px solid #9b9b9b;
           @include s_blockDemo(26px, 26px);
@@ -103,6 +107,7 @@
           }
         }
         p:last-of-type {
+          float: left;
           @include s_fontDemo(24px, 24px, #4a4a4a);
         }
       }

@@ -1,0 +1,113 @@
+@import "../common.scss";
+
+.order-info {
+  .order-header {
+    height: 100px;
+    background: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    .order-header-container {
+      overflow: hidden;
+      @include s_fontDemo(26px, 100px, #000);
+      @include s_allCenter;
+      .am-icon {
+        float: left;
+        margin-top: 27px;
+      }
+      span {
+        margin-left: 20px;
+        float: left;
+      }
+    }
+  }
+  .order-item-container {
+    .order-item {
+      padding: 21px 15px 28px 45px;
+      background: #fff;
+      overflow: hidden;
+      margin-bottom: 15px;
+      .left {
+        float: left;
+        @include s_fontDemo(24px, 45px, $font-4a);
+        margin-right: 50px;
+        p {
+          width: 450px;
+          text-overflow: ellipsis;
+          overflow: hidden;
+          white-space: nowrap;
+          &:last-of-type span {
+            color: $fed_theme;
+          }
+          &:last-of-type span:last-of-type {
+            font-size: 42px;
+          }
+        }
+      }
+      .right {
+        float: left;
+        position: relative;
+        height: 180px;
+        width: 190px;
+        margin-bottom: 28px;
+        .right-container {
+          overflow: hidden;
+          @include s_middle;
+          width: 190px;
+          .am-icon, p {
+            float: left;
+          }
+          .am-icon {
+            margin-bottom: 20px;
+            margin-right: 15px;
+            margin-top: 7px;
+          }
+          p {
+            @include s_fontDemo(24px, 45px, $font-4a);
+          }
+          .cancel {
+            @include s_blockDemo(160, 54px);
+            @include s_fontDemo(24px, 54px, $fed_theme);
+            border: 1px solid $fed_theme;
+            text-align: center;
+          }
+        }
+      }
+
+      .order-item-bottom {
+        .order-item-bottom-container {
+          border-top: 1px solid #e5e5e5;
+          padding-top: 20px;
+          display: flex;
+          align-items: center;
+          width: 100%;
+          .div-container {
+            li {
+              float: left;
+              box-sizing: border-box;
+              @include s_fontDemo(20px, 46px, $font-4a);
+              p:first-of-type {
+                overflow: hidden;
+                .am-icon {
+                  float: left;
+                  margin-right: 25px;
+                  margin-top: 7px;
+                }
+                span {
+                  float: left;
+                }
+              }
+              p:last-of-type {
+                padding-left: 50px;
+              }
+              &:last-of-type {
+                padding-left: 30px;
+                padding-right: 20px;
+                color: rgb(155,155,155)
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+@import "../common.scss";
+
+.contribution {
+  .container {
+    padding: 25px;
+    p {
+      overflow: hidden;
+      &:nth-of-type(1) {
+        @include s_fontDemo(30px, 30px, #000);
+        margin-bottom: 25px;
+      }
+      &:nth-of-type(2), &:nth-of-type(3) {
+        .point-green {
+          display: inline-block;
+          margin-top: 10px;
+          margin-left: 10px;
+        }
+        @include s_fontDemo(25px, 25px, $font-4a);
+        margin-bottom: 20px;
+      }
+      &:nth-of-type(4), &:nth-of-type(5) {
+        @include s_fontDemo(25px, 80px, #000);
+        @include s_blockDemo(100%, 80px);
+        margin-bottom: 30px;
+        background:#ffffff;
+        border:1px solid rgba(151,151,151,0.40);
+        box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+        border-radius:10px;
+        .am-icon {
+          float: left;
+          margin: 18px 40px 0;
+        }
+        span {
+          float: left;
+          &:last-of-type {
+            float: right;
+            background:#09bb07;
+            box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+            border-radius:10px;
+            width:150px;
+            height:40px;
+            @include s_fontDemo(25px, 40px, #fff);
+            text-align: center;
+            margin-top: 20px;
+            margin-right: 25px;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .fed-button {
+    @include s_center;
+    width: 90%;
+    bottom: 30px;
+    background: #09bb07;
+    color: #fff;
+  }
+  // 改变默认样式
+  .am-textarea-item {
+    border:1px solid rgba(151,151,151,0.40);
+    box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+    border-radius:10px;
+    .am-textarea-control textarea {
+      @include s_fontDemo(25px, 28px, $font-4a);
+    }
+  }
+}

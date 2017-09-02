@@ -1,0 +1,88 @@
+@import "../common.scss";
+
+.withdraw {
+  padding: 25px;
+  .fed-button {
+    width: 100%;
+    &:nth-of-type(1), &:nth-of-type(2) {
+      background: #fff;
+      color: $font-4a;
+      margin-bottom: 20px;
+    }
+    &:nth-of-type(3) {
+      background: #09bb07;
+    }
+  }
+  .container {
+    background-color: #fff;
+    margin-bottom: 20px;
+    padding-bottom: 270px;
+    p {
+      text-align: center;
+      overflow: hidden;
+      .am-icon {
+        float: left;
+      }
+      span {
+        float: left;
+      }
+      &:nth-of-type(1) {
+        padding-top: 130px;
+        width: 290px;
+        margin: 0 auto;
+        .am-icon {
+          margin-top: -10px;
+          margin-right: 30px;
+          margin-bottom: 30px;
+        }
+        span {
+          @include s_fontDemo(48px, 66px, #09bb07);
+        }
+      }
+      &:nth-of-type(2) {
+        margin-bottom: 54px;
+        @include s_fontDemo(20px, 28px, #09bb07);
+      }
+      &:nth-of-type(3) {
+        width: 320px;
+        margin: 0 auto 30px;
+        .am-icon {
+          margin-top: 0px;
+          margin-right: 0px;
+          &:last-of-type {
+            float: right;
+          }
+        };
+        span {
+          @include s_fontDemo(20px, 32px, $font-4a);
+          width: 260px;
+        }
+      }
+      &:nth-of-type(4) {
+        border:1px solid #09bb07;
+        border-radius:3px;
+        width:230px;
+        height:48px;
+        margin-bottom: 54px;
+        @include s_fontDemo(24px, 48px, #09bb07);
+        margin: 0 auto;
+        text-align: center;
+        span {
+          float: none;
+          &:last-of-type {
+            // line-height: 54px;
+          }
+        }
+      }
+    }
+    .ipt {
+      display: block;
+      @include s_blockDemo(350px, 108px);
+      @include s_fontDemo(26px, 108px, $font-4a);
+      border:1px solid rgba(151,151,151,0.40);
+      border-radius:10px;
+      margin: 0 auto 20px;
+      text-align: center;
+    }
+  }
+}

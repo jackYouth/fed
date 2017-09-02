@@ -1,0 +1,44 @@
+@import "../common.scss";
+
+.not-receive {
+  padding-left: 25px;
+  padding-right: 25px;
+  .header {
+    overflow: hidden;
+    .point-green {
+      margin-top: 40px;
+      margin-left: 10px;
+    }
+    p {
+      float: left;
+      padding-top: 36px;
+      padding-bottom: 36px;
+      @include s_fontDemo(24px, 24px, $font-4a);
+    }
+  }
+  .receive-list {
+    li {
+      background:#ffffff;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+      border-radius:10px;
+      padding: 15px 45px 15px 33px;
+      margin-bottom: 30px;
+      overflow: hidden;
+      img {
+        float: left;
+        height: 70px;
+      }
+      p {
+        float: right;
+        @include s_fontDemo(24px, 70px, #09bb07);
+      }
+    }
+  }
+  .fed-button {
+    width: 90%;
+    background: #09bb07;
+    color: #fff;
+    bottom: 30px;
+    @include s_center;
+  }
+}

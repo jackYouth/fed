@@ -1,0 +1,36 @@
+@import "../common.scss";
+
+.coupon-ui {
+  padding: 85px 40px;
+  li {
+    width: 48%;
+    padding-top: 48%;
+    position: relative;
+    border-radius: 100%;
+    background: #fff;
+    box-sizing: border-box;
+    margin-bottom: 60px;
+    .item-container {
+      @include s_allCenter;
+      img {
+        display: block;
+        margin: 0 auto;
+      }
+      span {
+        text-align: center;
+        display: block;
+        @include s_fontDemo(24px, 86px, $fed_theme);
+      }
+    }
+  }
+  @for $i from 1 to 3 {
+    li:nth-of-type(#{ $i * 2 - 1 }) {
+      margin-right: 2%;
+      float: left;
+    }
+    li:nth-of-type(#{ $i * 2 }) {
+      margin-left: 2%;
+      float: right;
+    }
+  }
+}

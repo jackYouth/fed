@@ -8,7 +8,7 @@ export default checkEnv
 //测试环境config处理
 const dev = config => {
   config.devServer = {
-    port  : '9009',
+    port  : '8080',
     host  : '0.0.0.0',
     hot   : true,
     inline: true,

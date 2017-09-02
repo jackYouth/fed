@@ -1,0 +1,97 @@
+@import "../common.scss";
+
+.pay-detail {
+  padding: 25px;
+  li {
+    margin-bottom: 25px;
+    padding-left: 30px;
+    background:#ffffff;
+    box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+    border-radius:10px;
+  }
+  .header {
+    overflow: hidden;
+    .point-green {
+      float: left;
+      margin-top: 32px !important;
+    }
+    span {
+      float: left;
+      &.point-green {
+        margin-top: 20px;
+      }
+      &:nth-of-type(2) {
+        @include s_fontDemo(24px, 80px, $font-4a);
+      }
+    }
+  }
+  .container {
+    padding: 0 15px 30px;
+    .container-title {
+      @include s_fontDemo(32px, 112px, $font-4a);
+      text-align: center;
+      border-bottom: 1px dashed #e5e5e5;
+    }
+    .income {
+      padding-top: 40px;
+      text-align: center;
+      @include s_fontDemo(28px, 62px, #0b3688);
+    }
+    .price {
+      @include s_fontDemo(28px, 62px, #0b3688);
+      margin-bottom: 44px;
+      width: 120px;
+      margin: 0 auto 45px;
+      p {
+        font-size: 48px;
+        display: inline-block;
+        position: relative;
+        span {
+          @include s_blockDemo(54px, 4px);
+          background: #0b3688;
+          display: inline-block;
+          @include s_center;
+          bottom: 0;
+        }
+      }
+    }
+    .text {
+      @include s_fontDemo(22px, 22px, #9b9b9b);
+      &.tag {
+        text-align: center;
+        border-bottom: 1px dashed #e5e5e5;
+        padding-bottom: 54px;
+      }
+    }
+    .container-info {
+      padding-top: 56px;
+      padding-left: 200px;
+      padding-bottom: 56px;
+      border-bottom: 1px dashed #e5e5e5;
+      p {
+        margin-bottom: 20px;
+      }
+    }
+    .container-bottom {
+      padding-top: 30px;
+      .lianbang-logo {
+        width: 390px;
+        display: block;
+        margin: 0 auto 15px;
+      }
+      p {
+        @include s_blockDemo(152px, 36px);
+        @include s_fontDemo(18px, 36px, #fff);
+        background:#0b3688;
+        border-radius:3px;
+        text-align: center;
+        margin: 0 auto;
+      }
+    }
+  }
+  .fed-button {
+    width: 100%;
+    background: #fff;
+    color: $font-4a;
+  }
+}

@@ -1,0 +1,22 @@
+@import "../common.scss";
+
+.withdraw-suc {
+  padding-top: 220px;
+  .am-icon {
+    display: block;
+    margin: 0 auto 130px;
+    @include s_blockDemo(260px, 260px);
+  }
+  p {
+    &:nth-of-type(1) {
+      @include s_fontDemo(32px, 46px, #000);
+      text-align: center;
+    }
+    &.fed-button {
+      @include s_center;
+      bottom: 30px;
+      width: 90%;
+      background: #09bb07;
+    }
+  }
+}

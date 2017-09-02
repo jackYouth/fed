@@ -1,0 +1,137 @@
+@import "../common.scss";
+
+.produce-code {
+  .container {
+    padding-left: 30px;
+    padding-right: 30px;
+    .box {
+      background:#ffffff;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+      border-radius:10px;
+      margin-bottom: 25px;
+    }
+    .tips {
+      height: 80px;
+      padding-left: 30px;
+      position: relative;
+      .am-icon {
+        float: left;
+        margin-right: 30px;
+        margin-top: 18px;
+      }
+      span {
+        float: left;
+        @include s_fontDemo(26px, 80px, #000);
+      }
+      p {
+        float: right;
+        @include s_fontDemo(26px, 44px, #fff);
+        @include s_middle;
+        right: 30px;
+        @include s_blockDemo(110px, 44px);
+        border-radius: 22px;
+        background: #09bb07;
+        text-align: center;
+
+      }
+    }
+    .machine {
+      padding: 25px;
+      overflow: hidden;
+      .left {
+        float: left;
+        @include s_blockDemo(162px, 104px);
+        margin-right: 20px;
+      }
+      .center {
+        float: left;
+        p {
+          &:nth-of-type(1) {
+            @include s_fontDemo(26px, 26px, #000);
+          }
+          &:nth-of-type(2) {
+            @include s_fontDemo(22px, 52px, $font-4a);
+            span {
+              color: #09bb07;
+            }
+          }
+          &:nth-of-type(3) {
+            @include s_fontDemo(22px, 26px, $font-9b);
+          }
+        }
+      }
+      .right {
+        float: right;
+        padding-top: 10px;
+        p:nth-of-type(1) {
+          @include s_fontDemo(22px, 48px, $font-4a);
+        }
+        p:nth-of-type(2) {
+          background:#09bb07;
+          width:61px;
+          height:25px;
+          @include s_fontDemo(18px, 25px, #fff);
+          text-align: center;
+          border-radius: 13px;
+          &.disable {
+            background: #f6a623;
+          }
+        }
+      }
+    }
+  }
+  .slide {
+    position: relative;
+    padding-top: 80px;
+    .slide-container {
+      @include s_center;
+      .am-icon {
+        float: left;
+        margin-right: 28px;
+        margin-top: 10px;
+      }
+      span {
+        float: left;
+        @include s_fontDemo(22px, 48px, #707070);
+      }
+    }
+  }
+  .fed-button {
+    background: #fff;
+    width: 90%;
+    color: #d0011b;
+    @include s_center;
+    bottom: 30px;
+    .footer-container {
+      @include s_allCenter;
+      width: 300px;
+      overflow: hidden;
+      .am-icon {
+        margin-right: 30px;
+        margin-top: 17px;
+        float: left;
+      }
+      span {
+        float: left;
+      }
+    }
+  }
+  .banner {
+    padding-top: 130px;
+    img {
+      display: block;
+      margin: 0 auto 130px;
+    }
+    p {
+      width: 660px;
+      @include s_fontDemo(30px, 48px, #000);
+      overflow: hidden;
+      margin: 0 auto;
+      .am-icon {
+        display: inline-block;
+        margin-right: 10px;
+        transform: translateY(10px);
+      }
+    }
+  }
+}
