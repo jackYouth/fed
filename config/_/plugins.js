@@ -3,7 +3,6 @@ import os from 'os'
 import webpack from 'webpack'
 import { BundleAnalyzerPlugin as bundleAnalyzerPlugin } from 'webpack-bundle-analyzer'
 import extractTextPlugin    from 'extract-text-webpack-plugin'
-import offlinePlugin        from 'offline-plugin'
 import copyPlugin           from 'copy-webpack-plugin'
 import htmlWebpackPlugin    from 'html-webpack-plugin'
 import webpackCleanupPlugin from 'webpack-cleanup-plugin'
@@ -69,17 +68,6 @@ export const generatePlugin = (name, output) => {
       new webpackCleanupPlugin({
         //删除前预览
         // preview: true
-      }),
-      new offlinePlugin({
-        updateStrategy: 'all',
-        version: '[hash]',
-        ServiceWorker: {
-          cacheName: `otosaas-${ name }`
-          // navigatorFallbackURL: `/`   //需调试 fallback
-        },
-        AppCache: {
-          FALLBACK: { '/': `/${ name }/` }
-        }
       }),
       new copyPlugin([
         {
