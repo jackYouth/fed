@@ -1,0 +1,56 @@
+@import "../common.scss";
+
+.focus-business {
+  .header {
+    height: 430px;
+    background: url(../../img/waimai_log1.png) center center no-repeat;
+    background-size: 600px 310px;
+  }
+  .activities {
+    padding-top: 40px;
+    li {
+      padding-left: 80px;
+      margin-bottom: 27px;
+      overflow: hidden;
+      .am-icon {
+        float: left;
+        margin-right: 20px;
+      }
+      span {
+        float: left;
+        @include s_fontDemo(22px, 30px, $font-4a);
+      }
+    }
+  }
+  .feature-service {
+    overflow: hidden;
+    padding: 0 30px;
+    ul {
+      overflow: hidden;
+      margin-bottom: 40px;
+      li {
+        float: left;
+        width: 16%;
+        margin-right: .8%;
+        &:last-of-type {
+          margin-right: 0;
+        }
+        .am-icon {
+          display: block;
+          margin: 0 auto;
+        }
+        p {
+          @include s_fontDemo(20px, 36px, $font-4a);
+          text-align: center;
+        }
+      }
+    }
+  }
+  .am-whitespace.am-whitespace-md {
+    background-color: #fff;
+  }
+  .fed-button {
+    width: 90%;
+    letter-spacing: 24px;
+  }
+}

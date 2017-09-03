@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
-import { setStore } from '@boluome/common-lib'
+import { setStore, getStore } from '@boluome/common-lib'
 import { Mask } from '@boluome/oto_saas_web_app_component'
 import { Flex, Icon } from 'antd-mobile'
+import { hashHistory } from 'react-router'
 
 import Specification from './specification'
 
@@ -41,7 +42,9 @@ export default class Goods extends Component {
     this.setState({ cartNum, allPrice, goodList })
   }
   handleToOrder(goodList) {
+    const business = getStore('business', 'session')
     setStore('businessList', goodList, 'session')
+    hashHistory.push(`/fed/business/${ business }/waimai/order`)
   }
   render() {
     const goodsData = [

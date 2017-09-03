@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
 import { TabBar, Icon } from 'antd-mobile'
 
-import Home from './home'
+import Main from './main'
 import Knowledge from '../knowledge'
 import Contribution from '../contribution'
-import Mine from '../mine'
+import User from '../User'
 
 export default class App extends Component {
   constructor(props) {
@@ -38,7 +38,7 @@ export default class App extends Component {
             }
             data-seed='logId'
           >
-            <Home mock='首页' />
+            <Main />
           </TabBar.Item>
           <TabBar.Item
             icon={ <Icon type={ require('../../img/svg/idx_tab_bar2.svg') } size='md' /> }
@@ -87,7 +87,7 @@ export default class App extends Component {
               }
             }
           >
-            <Mine mock='我' />
+            <User mock='我' />
           </TabBar.Item>
         </TabBar>
       </div>

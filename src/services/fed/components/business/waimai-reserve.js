@@ -1,10 +1,11 @@
 import React from 'react'
 import { setStore, getStore } from '@boluome/common-lib'
 import { Icon } from 'antd-mobile'
+import { hashHistory } from 'react-router'
 
 import '../../styles/reserve.scss'
 
-export default class Reserve extends React.Component {
+export default class WaimaiReserve extends React.Component {
   constructor(props) {
     super(props)
     const mdxz = {
@@ -68,6 +69,8 @@ export default class Reserve extends React.Component {
     reserveInfo.id = 20000000000 + reserveList.length
     reserveList.push(reserveInfo)
     setStore('reserveList', reserveList, 'session')
+    const business = getStore('business', 'session')
+    hashHistory.push(`/fed/business/${ business }/reserve/suc`)
   }
   handlePhoneIconClick() {
     this.phoneIpt.focus()

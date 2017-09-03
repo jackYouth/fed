@@ -1,22 +1,23 @@
 import { connect } from 'react-redux'
+import { setStore } from '@boluome/common-lib'
 import { wrap }    from '@boluome/oto_saas_web_app_component'
 import App         from '../components/app'
 
-import { getFedIndex, getKnowledgeIndex, getTopCategory, getSecondCategory, addSecondCategory, updateRepositoryStatus, getQrCode } from '../actions/app'
+import { getFedIndex, getKnowledgeIndex } from '../actions/app'
 
 const mapStateToProps = ({ app }) => ({ ...app })
 
-const mapDispatchToProps = dispatch => ({ dispatch })
+const mapDispatchToProps = dispatch => {
+  return {
+    dispatch,
+  }
+}
 
-const mapFunToComponent  = dispatch => ({
-  componentDidMount() {
-    dispatch(getFedIndex())
-    dispatch(getKnowledgeIndex())
-    dispatch(getTopCategory())
-    dispatch(getSecondCategory(1))
-    dispatch(addSecondCategory(1))
-    dispatch(updateRepositoryStatus(1, 1))
-    dispatch(getQrCode(3))
+const mapFunToComponent  = () => ({
+  componentWillMount() {
+    setStore('business', 'repast', 'session')
+    getFedIndex()
+    getKnowledgeIndex()
   },
 })
 

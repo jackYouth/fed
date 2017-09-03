@@ -1,0 +1,121 @@
+@import "../common.scss";
+
+.business {
+  padding: 30px;
+  height: 100%;
+  overflow: auto;
+  .banner {
+    overflow: hidden;
+    width: 100%;
+    margin-bottom: 30px;
+    .left {
+      float: left;
+      margin-left: 35px;
+      margin-right: 40px;
+    }
+    .right {
+      float: left;
+      padding-top: 20px;
+      .top {
+        background: #fff;
+        @include s_fontDemo(46px, 60px, $font-00);
+        font-family: cursive;
+      }
+      .bottom {
+        @include s_fontDemo(24px, 40px, $font-d9);
+      }
+    }
+  }
+  .service {
+    .service-item {
+      .am-flexbox {
+        background: none;
+      }
+      .am-grid-item-content div {
+        padding-top: 0 !important;
+      }
+      .icon-container {
+        width: 80px !important;
+        height: 80px !important;
+        background: #ef461b;
+        position: relative;
+        .am-icon {
+          @include s_allCenter;
+        }
+      }
+      p {
+        @include s_fontDemo(20px, 60px, $font-00);
+      }
+    }
+  }
+  .introduction {
+    margin-bottom: 40px;
+    .text {
+      @include s_fontDemo(20px, 34px, $font-4a);
+    }
+  }
+  .my-carousel {
+    margin-bottom: 40px;
+    .slider-list {
+      height: 324px !important;
+    }
+    .slider-decorator-0 {
+      bottom: 28px !important;
+    }
+    .carousel-item {
+      height: 324px;
+      position: relative;
+      .content {
+        @include s_allCenter;
+        overflow: hidden;
+        h1 {
+          @include s_fontDemo(42px, 58px, $font-ff);
+          margin-bottom: 10px;
+          font-weight: normal;
+          text-align: center;
+        }
+        p.border {
+          width: 52px;
+          border-top: 3px solid #fff;
+          background: $bg-ff;
+          margin: 0 auto 13px;
+        }
+        p:last-of-type {
+          @include s_fontDemo(18px, 26px, $font-ff);
+          text-align: center;
+          margin-bottom: 13px;
+        }
+        ul {
+          overflow: hidden;
+          width: 440px;
+          margin: 0 auto;
+          li {
+            float: left;
+            width: 22%;
+            margin-right: 3%;
+            text-align: center;
+            border: 1px solid #fff;
+            border-radius: 30px;
+            @include s_fontDemo(26px, 30px, #fff);
+            box-sizing: border-box;
+            &:last-of-type {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .comments-info {
+    .am-flexbox-item {
+      p {
+        @include s_fontDemo(20px, 34px, $font-00);
+        text-align: center;
+      }
+      &.active p {
+        color: $font-ef;
+      }
+    }
+  }
+}

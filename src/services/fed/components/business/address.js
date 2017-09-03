@@ -11,7 +11,7 @@ const Address = () => {
   const phone = getStore('phone', 'session')
   return (
     <div className='business-address'>
-      <img className='bg' src={ require('../../img/business_address_bg.png') } alt='business_address_bg' />
+      <img className='bg' src={ require('../../img/waimai_address_bg.png') } alt='business_address_bg' />
       <Flex className='selectes'>
         <FItem className='active'>全景模式</FItem>
         <FItem>2D地图</FItem>
@@ -27,10 +27,6 @@ const Address = () => {
             <Icon type={ require('../../img/svg/phone.svg') } size='xxs' />
             <span>{ `电话：${ phone }` }</span>
           </p>
-        </div>
-        <div className='site'>
-          <Icon type={ require('../../img/svg/location_active.svg') } size='xxs' />
-          <p>位置</p>
         </div>
         <div className='phone'>
           <Icon type={ require('../../img/svg/phone_active.svg') } size='xxs' />

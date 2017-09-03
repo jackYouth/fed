@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { wrap } from '@boluome/oto_saas_web_app_component'
 
-import Promotion from '../components/promotion'
+import Promotion from '../components/business/promotion'
 
 const mapStateToProps = ({ promotion }) => {
   const { currenFilter = '' } = promotion

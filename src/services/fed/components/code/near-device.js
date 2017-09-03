@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from 'antd-mobile'
+import { hashHistory } from 'react-router'
 
 import '../../styles/code/produce-code.scss'
 
@@ -12,7 +13,7 @@ const nearDevice = () => {
   ]
   return (
     <div className='produce-code'>
-      <div className='header'>
+      <div className='hi-header'>
         <img src={ require('../../img/my_app_hi.png') } alt='hi' />
         <span>城市加油站</span>
       </div>
@@ -24,7 +25,7 @@ const nearDevice = () => {
         </div>
         {
           nearMachines.map(o => (
-            <div className='machine box' key={ o.name }>
+            <div className='machine box' key={ o.name } onClick={ () => hashHistory.push('/fed/main/navigation') }>
               <img className='left' src={ require('../../img/machine.png') } alt='near-machine' />
               <div className='center'>
                 <p>{ o.name }</p>

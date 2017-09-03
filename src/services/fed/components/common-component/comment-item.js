@@ -45,7 +45,7 @@ export default class CommentItem extends Component {
         <div className='img-list'>
           {
             imgList.length > 0 &&
-            imgList.map(i => <img src={ i } alt='comment-img' />)
+            imgList.map(i => <img key={ i.id } src={ i.url } alt='comment-img' />)
           }
         </div>
         <div className='footer'>

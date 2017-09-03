@@ -1,146 +1,86 @@
-import React from 'react'
-import { Mask } from '@boluome/oto_saas_web_app_component'
-import { Icon, Carousel } from 'antd-mobile'
+import React, { Component } from 'react'
+import { Icon } from 'antd-mobile'
+import { hashHistory } from 'react-router'
 
-import '../../styles/knowledge-index.scss'
+import '../../styles/knowledge/index.scss'
 
-const KnowledgeIndex = () => {
-  const knowledgeDatas = [
-    { img: require('../../img/knowledge_banner_1.png'), num: '1,871,767', id: '1' },
-    { img: require('../../img/knowledge_banner_1.png'), num: '2,871,767', id: '2' },
-    { img: require('../../img/knowledge_banner_1.png'), num: '3,871,767', id: '3' },
-    { img: require('../../img/knowledge_banner_1.png'), num: '4,871,767', id: '4' },
-  ]
-  return (
-    <div className='knowlege-index'>
-      <h1 className='s_container'>
-        <Icon type='down' size='md' />
-        没有什么事情会阻碍我们
-      </h1>
-      {
-        knowledgeDatas && knowledgeDatas.length > 0 &&
-        <div className='knowledge-list-container'>
-          <ul className='knowledge-list'>
-            {
-              knowledgeDatas.map(item => <KnowledgeItem key={ item.id } { ...{ ...item } } />)
-            }
-          </ul>
-        </div>
-      }
-      <h1 className='s_container to-select'>
-        <Icon type='down' size='md' />
-        选择知识库
-      </h1>
-      <h1 className='s_container selected'>
-        <Icon type='down' size='md' />
-        我选好了
-      </h1>
-      {
-        Mask(<AllKnowledge />, { style: { zIndex: 1000 } })
-      }
-    </div>
-  )
-}
-
-export default KnowledgeIndex
-
-const AllKnowledge = ({ handleContainerClose }) => {
-  const knowledgeDatas = [
-    {
-      id:   'a',
-      data: [
-        { name: '生活综合', icon: 'down', kpi: '293', id: 1 },
-        { name: '美食烹饪', icon: 'right', kpi: '293', id: 2 },
-        { name: '语言学习', icon: 'left', kpi: '293', id: 3 },
-        { name: '生活综合', icon: 'up', kpi: '293', id: 4 },
-        { name: '美食烹饪', icon: 'down', kpi: '293', id: 5 },
-      ],
-    },
-    {
-      id:   'b',
-      data: [
-        { name: '我如果爱你', icon: 'down', kpi: '293', id: 1 },
-        { name: '陀飞轮', icon: 'right', kpi: '293', id: 2 },
-        { name: '红玫瑰', icon: 'left', kpi: '293', id: 3 },
-        { name: '浮夸', icon: 'up', kpi: '293', id: 4 },
-        { name: 'k歌之王', icon: 'down', kpi: '293', id: 5 },
-      ],
-    },
-    {
-      id:   'c',
-      data: [
-        { name: '十年', icon: 'down', kpi: '293', id: 1 },
-        { name: '你给我听好', icon: 'right', kpi: '293', id: 2 },
-        { name: '你的背包', icon: 'left', kpi: '293', id: 3 },
-        { name: '谢谢侬', icon: 'up', kpi: '293', id: 4 },
-        { name: '大开眼界', icon: 'down', kpi: '293', id: 5 },
-      ],
-    },
-  ]
-  return (
-    <div className='all-knowledge'>
-      <h1>全部知识库</h1>
-      <Carousel
-        className='knowledge-carousel'
-        autoplay={ Boolean('') }
-        infinite
-        selectedIndex={ 1 }
-        swipeSpeed={ 35 }
-        beforeChange={ (from, to) => console.log(`slide from ${ from } to ${ to }`) }
-        afterChange={ index => console.log('slide to', index) }
-      >
-        {
-          knowledgeDatas.map(ii => (
-            <div className='konwlede-module' key={ ii.id }>
-              {
-                ii.data.map(item => (
-                  <div className='data-item' key={ item.id }>
-                    <Icon className='name-icon' type={ item.icon } size='md' />
-                    <span className='name'>{ item.name }</span>
-                    <Icon className='kpi-icon' type='right' size='md' />
-                    &nbsp;
-                    <span className='kpi'>{ `KPI ${ item.kpi }` }</span>
-                    <Icon className='more-icon' type='left' size='md' />
-                  </div>
-                ))
-              }
-            </div>
-          ))
-        }
-      </Carousel>
-      <Icon className='close-mask' type='down' size='lg' onClick={ handleContainerClose } />
-    </div>
-  )
-}
-
-class KnowledgeItem extends React.Component {
+export default class SetKnowledge extends Component {
+  static defaultProps = {
+    selectHeaders: [
+      { title: '按使用次数', isSelected: false },
+      { title: '按添加时间', isSelected: false },
+      { title: '按热度', isSelected: false },
+    ],
+    setKnowledgeList: [
+      { title: '生活-生活百科', content: '五花八门的生活常识以及丰富多彩的生活知识，快来补充你的生活技巧吧！', inUse: true, num: '1900', id: 1 },
+      { title: '生活-生活百科', content: '五花八门的生活常识以及丰富多彩的生活知识，快来补充你的生活技巧吧！', inUse: true, num: '1900', id: 2 },
+      { title: '生活-生活百科', content: '五花八门的生活常识以及丰富多彩的生活知识，快来补充你的生活技巧吧！', inUse: true, num: '1900', id: 3 },
+      { title: '生活-生活百科', content: '五花八门的生活常识以及丰富多彩的生活知识，快来补充你的生活技巧吧！', inUse: false, num: '1900', id: 4 },
+    ],
+  }
   constructor(props) {
     super(props)
     this.state = {
       currentIndex: 0,
     }
-    this.types = ['常用', '进阶', '专家']
+    this.handleClickSelect = this.handleClickSelect.bind(this)
   }
-  handleClick(currentIndex) {
-    this.setState({ currentIndex })
+  handleClickSelect(index) {
+    const { currentIndex } = this.state
+    if (index !== currentIndex) {
+      this.setState({ currentIndex: index })
+    }
   }
   render() {
-    const { img, num } = this.props
+    const { selectHeaders, setKnowledgeList } = this.props
     const { currentIndex } = this.state
+    const datas = JSON.parse(JSON.stringify(selectHeaders))
+    datas[currentIndex].isSelected = true
     return (
-      <li className='knowledge-item'>
-        <p className='img'><img src={ img } alt='knowlege' /></p>
-        <div className='type'>
+      <div className='konwledge'>
+        <div className='header'>
           {
-            this.types.map((item, index) => <div className={ currentIndex === index ? 'active type-item' : 'type-item' } key={ item } onClick={ () => { if (currentIndex !== index) { this.handleClick(index) } } }><Icon type={ currentIndex === index ? 'up' : 'down' } size='md' /><span>{ item }</span></div>)
+            datas.map((item, index) => <SelectHeaderItem key={ item.title } { ...{ handleClick: this.handleClickSelect, index, ...item } } />)
+          }
+          <div className='select-header-item in-use'>使用中(<span>3/3</span>)</div>
+        </div>
+        <div className='set-knowledge-list'>
+          {
+            setKnowledgeList.map(item => <SetKnowledgeItem { ...item } key={ item.id } />)
           }
         </div>
-        <p className='number'>共有<span>{ num }</span>人添加该库</p>
-        <p className='knowledge-item-button'>
-          <Icon type='down' size='md' />
-          添加
-        </p>
-      </li>
+        <h1 className='s_container return-button' onClick={ () => hashHistory.push('/fed') }>
+          返回首页
+        </h1>
+        <h1 className='s_container set-button' onClick={ () => hashHistory.push('/fed/knowledge/first') }>
+          设置知识库
+        </h1>
+      </div>
     )
   }
+}
+
+const SelectHeaderItem = ({ handleClick, index, title, isSelected }) => {
+  return (
+    <div className='select-header-item' onClick={ () => handleClick(index) }>
+      <Icon type={ isSelected ? 'down' : 'up' } size='xxs' />
+      { title }
+    </div>
+  )
+}
+
+const SetKnowledgeItem = ({ inUse, content, title, num }) => {
+  return (
+    <div className={ inUse ? 'set-knowledge-item active' : 'set-knowledge-item' }>
+      <div className='item-left'>
+        <p className='item-title'>{ title }</p>
+        <p className='item-content'>{ content }</p>
+        <p className='item-num'>知识累积 <span>{ num }</span>/个 &nbsp;&nbsp; <span>详细</span></p>
+      </div>
+      <div className='item-right'>
+        <Icon type={ inUse ? 'right' : 'left' } size='md' />
+        { inUse ? '使用中' : '停用' }
+      </div>
+    </div>
+  )
 }

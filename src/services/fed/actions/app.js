@@ -1,88 +1,91 @@
-import { get, send } from '@boluome/common-lib'
+import { get } from '@boluome/common-lib'
 import { Loading } from '@boluome/oto_saas_web_app_component'
-import { Toast } from 'antd-mobile'
+import axios from 'axios'
 
-export const getFedIndex = () => () => {
+export const getFedIndex = () => {
   const closeLoading = Loading()
-  get('/index').then(({ code, data, message }) => {
-    if (code === 0) {
+  get('/index').then(({ code, data, msg }) => {
+    if (code === 200) {
       console.log('fedData', data)
     } else {
-      Toast.fail(message)
+      console.log(msg)
     }
     closeLoading()
   })
 }
 
-export const getKnowledgeIndex = () => () => {
+export const getKnowledgeIndex = () => {
   const closeLoading = Loading()
-  get('/repository').then(({ code, data, message }) => {
-    if (code === 0) {
+  get('/repository').then(({ code, data, msg }) => {
+    if (code === 200) {
       console.log('getKnowledgeIndex', data)
     } else {
-      Toast.fail(message)
+      console.log(msg)
     }
     closeLoading()
   })
 }
 
-export const getTopCategory = () => () => {
+export const getTopCategory = callback => {
   const closeLoading = Loading()
-  get('/topCategoryList').then(({ code, data, message }) => {
-    if (code === 0) {
+  get('/topCategoryList').then(({ code, data, msg }) => {
+    if (code === 200) {
       console.log('getTopCategory', data)
+      callback(data)
     } else {
-      Toast.fail(message)
+      console.log(msg)
     }
     closeLoading()
   })
 }
 
-export const getSecondCategory = id => () => {
+export const getSecondCategory = (id, callback) => {
   const closeLoading = Loading()
-  send('/setSecondCategory', { id }).then(({ code, data, message }) => {
-    if (code === 0) {
+  axios.post('http://aapi.ddlass.com/setSecondCategory', { id }).then(({ code, data, msg }) => {
+    console.log('msg', msg)
+    if (code === 200) {
+      callback(data)
       console.log('getSecondCategory', data)
     } else {
-      Toast.fail(message)
+      console.log(msg)
     }
     closeLoading()
   })
 }
 
 
-export const addSecondCategory = id => () => {
+export const addSecondCategory = id => {
   const closeLoading = Loading()
-  send('/addSecondCategory', { id }).then(({ code, data, message }) => {
-    if (code === 0) {
+  axios.post('http://aapi.ddlass.com/addSecondCategory', { id }).then(({ code, data, msg }) => {
+    if (code === 200) {
       console.log('addSecondCategory', data)
     } else {
-      Toast.fail(message)
+      console.log(msg)
     }
     closeLoading()
   })
 }
 
-export const updateRepositoryStatus = (id, status) => () => {
+export const updateRepositoryStatus = (id, status) => {
   const closeLoading = Loading()
-  send('/updateRepositoryStatus', { id, status }).then(({ code, data, message }) => {
-    if (code === 0) {
+  axios.post('http://aapi.ddlass.com/updateRepositoryStatus', { id, status }).then(({ code, data, msg }) => {
+    if (code === 200) {
       console.log('updateRepositoryStatus', data)
     } else {
-      Toast.fail(message)
+      console.log(msg)
     }
     closeLoading()
   })
 }
 
 
-export const getQrCode = id => () => {
+export const getQrCode = id => {
   const closeLoading = Loading()
-  send('/getQrCode', { id }).then(({ code, data, message }) => {
-    if (code === 0) {
+  axios.post('http://aapi.ddlass.com/getQrCode', { id }).then(({ code, data, msg }) => {
+    if (code === 200) {
       console.log('getQrCode', data)
     } else {
-      Toast.fail(message)
+      console.log(msg)
     }
     closeLoading()
   })

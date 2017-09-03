@@ -1,5 +1,6 @@
 import React from 'react'
 import { Icon } from 'antd-mobile'
+import { hashHistory } from 'react-router'
 
 import '../../styles/code/produce-code.scss'
 
@@ -20,7 +21,7 @@ const ProduceCode = () => {
         </p>
       </div>
       <div className='fed-button'>
-        <p className='footer-container'>
+        <p className='footer-container' onClick={ () => hashHistory.push('/fed/main/nearDevice') }>
           <Icon type={ require('../../img/svg/location_d0.svg') } size='md' />
           <span>附近的智能终端</span>
         </p>

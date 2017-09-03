@@ -1,11 +1,13 @@
 import React from 'react'
-import { parseQuery } from '@boluome/common-lib'
+import { getStore } from '@boluome/common-lib'
 import { Icon } from 'antd-mobile'
+import { hashHistory } from 'react-router'
 
 import '../../styles/business/pay-suc.scss'
 
 const PaySuc = () => {
-  const price = parseQuery(location.search).price
+  const price = getStore('payPrice', 'session')
+  const business = getStore('business', 'session')
   return (
     <div className='pay-suc'>
       <div className='common-header'>
@@ -20,9 +22,9 @@ const PaySuc = () => {
           <span>支付成功</span>
         </p>
         <p>¥<span>{ price }</span></p>
-        <p>查看订单</p>
+        <p onClick={ () => hashHistory.push(`/fed/business/${ business }/center/waimaiInfo`) }>查看订单</p>
       </div>
-      <p className='fed-button'>返回商家</p>
+      <p className='fed-button' onClick={ () => hashHistory.push(`/fed/business/${ business }`) }>返回商家</p>
     </div>
   )
 }

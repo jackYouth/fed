@@ -45,23 +45,23 @@ export default class OrderInfo extends Component {
   }
   render() {
     const { orderList } = this.state
-    const { title, isbusiness } = this.props
+    const { title, isWaimai } = this.props
     return (
       <div className='order-info'>
         <div className='order-header'>
           <div className='order-header-container'>
-            <Icon type={ isbusiness ? require('../../img/svg/business_info_title.svg') : require('../../img/svg/order.svg') } size='md' />
+            <Icon type={ isWaimai ? require('../../img/svg/waimai_info_title.svg') : require('../../img/svg/order.svg') } size='md' />
             <span>{ title }</span>
           </div>
         </div>
         <ul className='order-item-container'>
           {
-            !isbusiness &&
+            !isWaimai &&
             orderList.map(o => <OrderItem handelCancelOrder={ this.handelCancelOrder } orderInfo={ o } key={ o.id } />)
           }
           {
-            isbusiness &&
-            orderList.map(o => <businessItem orderInfo={ o } key={ o.id } />)
+            isWaimai &&
+            orderList.map(o => <WaimaiItem orderInfo={ o } key={ o.id } />)
           }
         </ul>
       </div>
@@ -80,8 +80,9 @@ const addTime = time => {
   return `${ h }:${ m }`
 }
 
-const businessItem = ({ orderInfo }) => {
+const WaimaiItem = ({ orderInfo }) => {
   const { id, time, status = 1, businessList, totalPrice } = orderInfo
+  console.log('businessList', businessList)
   const name = businessList[0].title
   let currentIcon = require('../../img/svg/time.svg')
   let currentText = '等待确认'
@@ -96,9 +97,9 @@ const businessItem = ({ orderInfo }) => {
 
   const nextTime = addTime(time)
   const orderStatus = [
-    { name: '骑手已取货', time: nextTime, icon: require('../../img/svg/business_info_1.svg') },
-    { name: '已出发,前往派送', time: addTime(nextTime), icon: require('../../img/svg/business_info_2.svg') },
-    { name: '已送达', time: addTime(addTime(nextTime)), icon: require('../../img/svg/business_info_3.svg') },
+    { name: '骑手已取货', time: nextTime, icon: require('../../img/svg/waimai_info_1.svg') },
+    { name: '已出发,前往派送', time: addTime(nextTime), icon: require('../../img/svg/waimai_info_2.svg') },
+    { name: '已送达', time: addTime(addTime(nextTime)), icon: require('../../img/svg/waimai_info_3.svg') },
   ]
   return (
     <li className='order-item'>

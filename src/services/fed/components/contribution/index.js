@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Icon, TextareaItem } from 'antd-mobile'
 import { createForm } from 'rc-form'
+import { hashHistory } from 'react-router'
 
 import '../../styles/contribution/contribution.scss'
 
@@ -49,7 +50,7 @@ class Contribution extends Component {
             placeholder='请为该库创建第一条知识，我们采纳后会为您丰富它，如果您愿意与我们一同完成它，我们会非常积极的与您共同完成。'
           />
         </div>
-        <p className='fed-button'>提交到知识库</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/fed/contribution/suc') }>提交到知识库</p>
       </div>
     )
   }
