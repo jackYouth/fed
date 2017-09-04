@@ -24,6 +24,12 @@
       .knowledge-item {
         @include s_blockDemo(420px, auto);
         position: absolute;
+        &:first-of-type {
+          margin-left: 20px;
+        }
+        &:last-of-type {
+          padding-right: 20px;
+        }
         .img {
           height: 500px;
           img {
@@ -98,13 +104,14 @@
     @include s_fontDemo(26px, 100px, $font-4a);
     border-bottom: 1px dashed $border-97;
     margin-bottom: 22px;
+    text-align: center;
   }
   .konwlede-module {
     margin-bottom: 38px;
     .data-item {
       @include s_blockDemo(auto, 109px);
       @include s_fontDemo(20px, 109px, $font-4a);
-      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+      box-shadow:0 1px 7px 0 rgba(0,0,0,0.06);
       margin-bottom: 20px;
       span {
         display: inline-block;
@@ -129,7 +136,14 @@
   .close-mask {
     @include s_center;
     bottom: 0;
+    @include s_blockDemo(90px, 90px);
+    border-radius: 100%;
+    background: #fff;
+    box-shadow:1px 4px 10px 0 rgba(0,0,0,0.19);
     transform: translateY(50%) translateX(-50%);
+    .am-icon {
+      @include s_allCenter;
+    }
   }
 }
 

@@ -26,13 +26,14 @@
     margin-bottom: 90px;
   }
   .button {
-    width: 700px;
+    width: 93%;
     height: 80px;
     border-radius: 10px;
     background: $theme;
     text-align: center;
-    margin: 0 auto;
     @include s_fontDemo(26px, 80px, $font-ff);
+    @include s_center;
+    bottom: 30px;
   }
   .not-new-customer {
     .use-data {

@@ -40,7 +40,7 @@ export default class SecondKnowledge extends Component {
     return (
       <div className='knowlege-index'>
         <h1 className='s_container'>
-          <Icon type='down' size='md' />
+          <Icon style={{ marginTop: '10px' }} type={ require('../../img/svg/tea_o.svg') } size='md' />
           没有什么事情会阻碍我们
         </h1>
         {
@@ -57,7 +57,7 @@ export default class SecondKnowledge extends Component {
           className='s_container to-select'
           onClick={ () => Mask(<AllKnowledge />, { style: { zIndex: 1000 } }) }
         >
-          <Icon type='down' size='md' />
+          <Icon style={{ marginTop: '20px' }} type={ require('../../img/svg/move.svg') } size='xs' />
           选择知识库
         </h1>
       </div>
@@ -118,10 +118,10 @@ const AllKnowledge = ({ handleContainerClose }) => {
                   <div className='data-item' key={ item.id }>
                     <Icon className='name-icon' type={ item.icon } size='md' />
                     <span className='name'>{ item.name }</span>
-                    <Icon className='kpi-icon' type='right' size='md' />
+                    <Icon style={{ marginTop: '-5px' }} className='kpi-icon' type={ require('../../img/svg/kpi.svg') } size='xs' />
                     &nbsp;
                     <span className='kpi'>{ `KPI ${ item.kpi }` }</span>
-                    <Icon className='more-icon' type='left' size='md' />
+                    <Icon style={{ marginTop: '10px' }} className='more-icon' type={ require('../../img/svg/point_three.svg') } size='md' />
                   </div>
                 ))
               }
@@ -129,7 +129,7 @@ const AllKnowledge = ({ handleContainerClose }) => {
           ))
         }
       </Carousel>
-      <Icon className='close-mask' type='down' size='lg' onClick={ handleContainerClose } />
+      <span className='close-mask'><Icon type={ require('../../img/svg/close.svg') } size='md' onClick={ handleContainerClose } /></span>
     </div>
   )
 }

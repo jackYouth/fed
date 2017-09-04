@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { hashHistory } from 'react-router'
 import { TabBar, Icon } from 'antd-mobile'
 
 import Main from './main'
@@ -51,6 +52,7 @@ export default class App extends Component {
                 this.setState({
                   selectedTab: 'tab2',
                 })
+                hashHistory.push('/fed/knowledge')
               }
             }
             data-seed='logId1'

@@ -2,11 +2,11 @@ import { get } from '@boluome/common-lib'
 import { Loading } from '@boluome/oto_saas_web_app_component'
 import axios from 'axios'
 
-export const getFedIndex = () => {
+export const getFedIndex = callback => {
   const closeLoading = Loading()
   get('/index').then(({ code, data, msg }) => {
     if (code === 200) {
-      console.log('fedData', data)
+      callback(data)
     } else {
       console.log(msg)
     }
@@ -14,11 +14,11 @@ export const getFedIndex = () => {
   })
 }
 
-export const getKnowledgeIndex = () => {
+export const getKnowledgeIndex = callback => {
   const closeLoading = Loading()
   get('/repository').then(({ code, data, msg }) => {
     if (code === 200) {
-      console.log('getKnowledgeIndex', data)
+      callback(data)
     } else {
       console.log(msg)
     }

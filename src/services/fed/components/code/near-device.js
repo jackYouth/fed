@@ -46,7 +46,7 @@ const nearDevice = () => {
           <span>上滑获取更多位置</span>
         </p>
       </div>
-      <div className='fed-button'>
+      <div className='fed-button' onClick={ () => hashHistory.push('/fed/main/code') }>
         <p className='footer-container'>
           <Icon type={ require('../../img/svg/arrow_left.svg') } size='md' />
           <span>返回二维码页面</span>

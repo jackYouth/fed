@@ -1,4 +1,5 @@
 import React from 'react'
+import { hashHistory } from 'react-router'
 
 import '../../styles/user/not-receive.scss'
 
@@ -25,7 +26,7 @@ const ReceiveMoney = () => {
           ))
         }
       </ul>
-      <p className='fed-button'>返回个人中心</p>
+      <p className='fed-button' onClick={ () => hashHistory.push('/fed/user') }>返回个人中心</p>
     </div>
   )
 }

@@ -1,0 +1,53 @@
+@import "../common.scss";
+
+.navigation {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .map {
+    width: 100%;
+    height: calc(100% - 100px);
+  }
+  .top {
+    height: 170px;
+    width: 100%;
+    padding-left:50px;
+    position: absolute;
+    top: 0;
+    background: #fff;
+    .am-icon {
+      margin-top: 50px;
+      margin-right: 20px;
+      float: left;
+    }
+    p {
+      float: left;
+      margin-top: 40px;
+      @include s_fontDemo(36px, 42px, #1296db);
+    }
+  }
+  .bottom {
+    box-sizing: border-box;
+    height: 100px;
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    @include s_fontDemo(24px, 100px, #4a4a4a);
+    background: #fff;
+    .am-icon {
+      margin-top: 30px;
+      &:first-of-type {
+        float: left;
+      }
+      &:last-of-type {
+        float: right;
+      }
+    }
+    p {
+      @include s_fontDemo(36px, 42px, #1296db);
+    }
+  }
+}

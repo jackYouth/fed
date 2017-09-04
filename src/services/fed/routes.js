@@ -7,60 +7,60 @@ const Routes = () => (
       <IndexRoute component={ require('react-router?name=app!./containers/app') } />
       <Route path='main'>
         <IndexRoute component={ require('react-router?name=app!./containers/app') } />
-        <Route path='code' component={ require('react-router?name=demo!./components/code') } />
-        <Route path='nearDevice' component={ require('react-router?name=demo!./components/code/near-device') } />
-        <Route path='navigation' component={ require('react-router?name=demo!./components/code/navigation') } />
-        <Route path='password' component={ require('react-router?name=demo!./components/password/password') } />
-        <Route path='vertification' component={ require('react-router?name=demo!./components/password/vertification-suc') } />
-        <Route path='focusBusiness' component={ require('react-router?name=demo!./components/password/focus-business') } />
+        <Route path='code' component={ require('react-router?name=code!./components/code') } />
+        <Route path='nearDevice' component={ require('react-router?name=nearDevice!./components/code/near-device') } />
+        <Route path='navigation' component={ require('react-router?name=navigation!./components/code/navigation') } />
+        <Route path='password' component={ require('react-router?name=password!./components/password/password') } />
+        <Route path='vertification' component={ require('react-router?name=vertification!./components/password/vertification-suc') } />
+        <Route path='focusBusiness' component={ require('react-router?name=focusBusiness!./components/password/focus-business') } />
       </Route>
       <Route path='knowledge'>
-        <IndexRoute component={ require('react-router?name=app!./components/knowledge') } />
-        <Route path='first' component={ require('react-router?name=demo!./components/knowledge/first-knowledge') } />
-        <Route path='second' component={ require('react-router?name=demo!./components/knowledge/second-knowledge') } />
+        <IndexRoute component={ require('react-router?name=knowledge!./components/knowledge') } />
+        <Route path='first' component={ require('react-router?name=first!./components/knowledge/first-knowledge') } />
+        <Route path='second' component={ require('react-router?name=second!./components/knowledge/second-knowledge') } />
       </Route>
       <Route path='contribution'>
-        <IndexRoute component={ require('react-router?name=app!./components/contribution') } />
-        <Route path='suc' component={ require('react-router?name=demo!./components/contribution/contribution-suc') } />
+        <IndexRoute component={ require('react-router?name=contribution!./components/contribution') } />
+        <Route path='suc' component={ require('react-router?name=contribution-suc!./components/contribution/contribution-suc') } />
       </Route>
       <Route path='user'>
-        <IndexRoute component={ require('react-router?name=app!./components/user') } />
-        <Route path='setting' component={ require('react-router?name=demo!./components/user/setting') } />
-        <Route path='priceList' component={ require('react-router?name=demo!./components/user/price-list') } />
-        <Route path='priceDetail' component={ require('react-router?name=demo!./components/user/price-detail') } />
-        <Route path='withdraw' component={ require('react-router?name=demo!./components/user/withdraw') } />
-        <Route path='withdrawSuc' component={ require('react-router?name=demo!./components/user/withdraw-suc') } />
-        <Route path='receiveMoney' component={ require('react-router?name=demo!./components/user/receive-money') } />
-        <Route path='contribution' component={ require('react-router?name=demo!./components/user/my-contribution') } />
-        <Route path='achieve' component={ require('react-router?name=demo!./components/user/my-achieve') } />
+        <IndexRoute component={ require('react-router?name=user!./components/user') } />
+        <Route path='setting' component={ require('react-router?name=setting!./components/user/setting') } />
+        <Route path='priceList' component={ require('react-router?name=price-list!./components/user/price-list') } />
+        <Route path='priceDetail' component={ require('react-router?name=price-detail!./components/user/price-detail') } />
+        <Route path='withdraw' component={ require('react-router?name=withdraw!./components/user/withdraw') } />
+        <Route path='withdrawSuc' component={ require('react-router?name=withdraw-suc!./components/user/withdraw-suc') } />
+        <Route path='receiveMoney' component={ require('react-router?name=receive-money!./components/user/receive-money') } />
+        <Route path='contribution' component={ require('react-router?name=my-contribution!./components/user/my-contribution') } />
+        <Route path='achieve' component={ require('react-router?name=my-achieve!./components/user/my-achieve') } />
       </Route>
       <Route path='myApps'>
-        <IndexRoute component={ require('react-router?name=app!./components/my-apps') } />
-        <Route path='attention' component={ require('react-router?name=demo!./components/my-apps/my-attention') } />
-        <Route path='search' component={ require('react-router?name=demo!./components/my-apps/business-search') } />
+        <IndexRoute component={ require('react-router?name=my-apps!./components/my-apps') } />
+        <Route path='attention' component={ require('react-router?name=my-attention!./components/my-apps/my-attention') } />
+        <Route path='search' component={ require('react-router?name=business-search!./components/my-apps/business-search') } />
       </Route>
       <Route path='business/:businessName'>
-        <IndexRoute component={ require('react-router?name=app!./containers/business') } />
+        <IndexRoute component={ require('react-router?name=business!./containers/business') } />
         <Route path='reserve'>
-          <IndexRoute component={ require('react-router?name=app!./components/business/reserve') } />
-          <Route path='suc' component={ require('react-router?name=demo!./components/business/reserve-suc') } />
+          <IndexRoute component={ require('react-router?name=reserve!./components/business/reserve') } />
+          <Route path='suc' component={ require('react-router?name=reserve-suc!./components/business/reserve-suc') } />
         </Route>
         <Route path='waimai'>
-          <IndexRoute component={ require('react-router?name=app!./components/business/goods') } />
-          <Route path='order' component={ require('react-router?name=demo!./components/business/order') } />
-          <Route path='pay' component={ require('react-router?name=demo!./components/business/pay') } />
-          <Route path='paySuc' component={ require('react-router?name=demo!./components/business/pay-suc') } />
+          <IndexRoute component={ require('react-router?name=goods!./components/business/goods') } />
+          <Route path='order' component={ require('react-router?name=order!./components/business/order') } />
+          <Route path='pay' component={ require('react-router?name=pay!./components/business/pay') } />
+          <Route path='paySuc' component={ require('react-router?name=pay-suc!./components/business/pay-suc') } />
         </Route>
-        <Route path='promotion' component={ require('react-router?name=demo!./containers/promiton') } />
-        <Route path='address' component={ require('react-router?name=demo!./components/business/address.js') } />
+        <Route path='promotion' component={ require('react-router?name=promiton!./containers/promiton') } />
+        <Route path='address' component={ require('react-router?name=address!./components/business/address') } />
         <Route path='news'>
-          <IndexRoute component={ require('react-router?name=app!./components/business/news') } />
-          <Route path='inner' component={ require('react-router?name=demo!./components/business/news-inner') } />
+          <IndexRoute component={ require('react-router?name=news!./components/business/news') } />
+          <Route path='inner' component={ require('react-router?name=news-inner!./components/business/news-inner') } />
         </Route>
         <Route path='center'>
-          <IndexRoute component={ require('react-router?name=app!./components/business/center') } />
-          <Route path='reserveInfo' component={ require('react-router?name=demo!./components/business/reserve-info') } />
-          <Route path='waimaiInfo' component={ require('react-router?name=demo!./components/business/waimai-info') } />
+          <IndexRoute component={ require('react-router?name=center!./components/business/center') } />
+          <Route path='reserveInfo' component={ require('react-router?name=reserve-info!./components/business/reserve-info') } />
+          <Route path='waimaiInfo' component={ require('react-router?name=waimai-info!./components/business/waimai-info') } />
         </Route>
       </Route>
     </Route>

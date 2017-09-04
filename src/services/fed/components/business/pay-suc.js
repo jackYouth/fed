@@ -6,7 +6,7 @@ import { hashHistory } from 'react-router'
 import '../../styles/business/pay-suc.scss'
 
 const PaySuc = () => {
-  const price = getStore('payPrice', 'session')
+  const price = getStore('orderPrice', 'session')
   const business = getStore('business', 'session')
   return (
     <div className='pay-suc'>

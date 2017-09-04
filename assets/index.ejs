@@ -53,20 +53,8 @@
          document.writeln('<script src="https://as.alipayobjects.com/g/component/es6-promise/3.2.2/es6-promise.min.js"'+'>'+'<'+'/'+'script>');
        }
     </script>
-  </head>
+  </head><script type="text/javascript" src="https://webapi.amap.com/maps?v=1.3&key=f5975f0c9084ec6e7daea38dfa7912a4"></script>
   <body>
     <div id='root'></div>
-    <% if(htmlWebpackPlugin.options.isProduction) { %>
-      <script src='https://f1.otosaas.com/js/fetch.js'></script>
-    <% } else { %>
-      <script src='https://blm.otosaas.com/static/common/fetch.js'></script>
-    <% } %>
-
-    <script src="https://api.map.baidu.com/api?v=2.0&ak=iSmNX7UhQIHOA6Wnpp3DW2qVMhIua2hu&s=1"></script>
-    <% if(htmlWebpackPlugin.options.isProduction) { %>
-      <script src='https://f1.otosaas.com/js/fetch.js'></script>
-    <% } else { %>
-      <script src='https://blm.otosaas.com/static/common/fetch.js'></script>
-    <% } %>
   </body>
 </html>
