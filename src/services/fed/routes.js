@@ -62,6 +62,7 @@ const Routes = () => (
           <Route path='reserveInfo' component={ require('react-router?name=reserve-info!./components/business/reserve-info') } />
           <Route path='waimaiInfo' component={ require('react-router?name=waimai-info!./components/business/waimai-info') } />
         </Route>
+        <Route path='schedule' component={ require('react-router?name=schedule!./components/business/schedule') } />
       </Route>
     </Route>
   </Router>

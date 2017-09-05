@@ -13,7 +13,7 @@ export default class KnowledgeItem extends Component {
     this.setState({ currentIndex })
   }
   render() {
-    const { img, num, handleClick } = this.props
+    const { img, handleClick } = this.props
     const { currentIndex } = this.state
     return (
       <li className='knowledge-item'>
@@ -32,7 +32,7 @@ export default class KnowledgeItem extends Component {
             ))
           }
         </div>
-        <p className='number'>共有<span>{ num }</span>人添加该库</p>
+        <p className='number'>共有<span>1,932,987</span>人添加该库</p>
         <p className='knowledge-item-button' onClick={ () => handleClick(1) }>
           <Icon style={{ marginTop: '10px' }} type={ require('../../img/svg/add_ff.svg') } size='md' />
           添加

@@ -6,6 +6,7 @@ import { hashHistory } from 'react-router'
 
 import { getSecondCategory, addSecondCategory } from '../../actions/app.js'
 import KnowledgeItem from './knowledge-item'
+import FirstKnowledgeItem from './first-knowledge-item'
 
 import '../../styles/knowledge/second-knowledge.scss'
 
@@ -16,6 +17,7 @@ export default class SecondKnowledge extends Component {
       datas: {},
     }
     this.getData = this.getData.bind(this)
+    this.handleFirstKnowledgeClick = this.handleFirstKnowledgeClick.bind(this)
   }
   componentWillMount() {
     const id = getStore('firstId', 'session')
@@ -28,12 +30,17 @@ export default class SecondKnowledge extends Component {
     addSecondCategory(id)
     hashHistory.push('/fed/knowledge')
   }
+  handleFirstKnowledgeClick(id, handleContainerClose) {
+    getSecondCategory(id, this.getData)
+    handleContainerClose()
+  }
+
   render() {
     const knowledgeDatas = [
-      { img: require('../../img/knowledge_banner_1.png'), num: '1,871,767', id: '1' },
-      { img: require('../../img/knowledge_banner_1.png'), num: '2,871,767', id: '2' },
-      { img: require('../../img/knowledge_banner_1.png'), num: '3,871,767', id: '3' },
-      { img: require('../../img/knowledge_banner_1.png'), num: '4,871,767', id: '4' },
+      { img: require('../../img/knowledge_banner_1.png'), id: '1' },
+      { img: require('../../img/knowledge_banner_1.png'), id: '2' },
+      { img: require('../../img/knowledge_banner_1.png'), id: '3' },
+      { img: require('../../img/knowledge_banner_1.png'), id: '4' },
     ]
     const { datas } = this.state
     console.log('secondDatas', datas)
@@ -55,7 +62,7 @@ export default class SecondKnowledge extends Component {
         }
         <h1
           className='s_container to-select'
-          onClick={ () => Mask(<AllKnowledge />, { style: { zIndex: 1000 } }) }
+          onClick={ () => Mask(<AllKnowledge handleFirstKnowledgeClick={ this.handleFirstKnowledgeClick } />, { style: { zIndex: 1000 } }) }
         >
           <Icon style={{ marginTop: '20px' }} type={ require('../../img/svg/move.svg') } size='xs' />
           选择知识库
@@ -65,39 +72,9 @@ export default class SecondKnowledge extends Component {
   }
 }
 
-const AllKnowledge = ({ handleContainerClose }) => {
-  const knowledgeDatas = [
-    {
-      id:   'a',
-      data: [
-        { name: '生活综合', icon: 'down', kpi: '293', id: 1 },
-        { name: '美食烹饪', icon: 'right', kpi: '293', id: 2 },
-        { name: '语言学习', icon: 'left', kpi: '293', id: 3 },
-        { name: '生活综合', icon: 'up', kpi: '293', id: 4 },
-        { name: '美食烹饪', icon: 'down', kpi: '293', id: 5 },
-      ],
-    },
-    {
-      id:   'b',
-      data: [
-        { name: '我如果爱你', icon: 'down', kpi: '293', id: 1 },
-        { name: '陀飞轮', icon: 'right', kpi: '293', id: 2 },
-        { name: '红玫瑰', icon: 'left', kpi: '293', id: 3 },
-        { name: '浮夸', icon: 'up', kpi: '293', id: 4 },
-        { name: 'k歌之王', icon: 'down', kpi: '293', id: 5 },
-      ],
-    },
-    {
-      id:   'c',
-      data: [
-        { name: '十年', icon: 'down', kpi: '293', id: 1 },
-        { name: '你给我听好', icon: 'right', kpi: '293', id: 2 },
-        { name: '你的背包', icon: 'left', kpi: '293', id: 3 },
-        { name: '谢谢侬', icon: 'up', kpi: '293', id: 4 },
-        { name: '大开眼界', icon: 'down', kpi: '293', id: 5 },
-      ],
-    },
-  ]
+const AllKnowledge = ({ handleContainerClose, handleFirstKnowledgeClick }) => {
+  const shortFirstKnowledges = getStore('shortFirstKnowledges', 'session')
+  console.log('shortFirstKnowledges', shortFirstKnowledges)
   return (
     <div className='all-knowledge'>
       <h1>全部知识库</h1>
@@ -107,25 +84,19 @@ const AllKnowledge = ({ handleContainerClose }) => {
         infinite
         selectedIndex={ 1 }
         swipeSpeed={ 35 }
+        style={{ width: '6.5rem' }}
         beforeChange={ (from, to) => console.log(`slide from ${ from } to ${ to }`) }
         afterChange={ index => console.log('slide to', index) }
       >
         {
-          knowledgeDatas.map(ii => (
-            <div className='konwlede-module' key={ ii.id }>
+          shortFirstKnowledges.map(ii => (
+            <ul className='konwlede-module' key={ ii[0].id }>
               {
-                ii.data.map(item => (
-                  <div className='data-item' key={ item.id }>
-                    <Icon className='name-icon' type={ item.icon } size='md' />
-                    <span className='name'>{ item.name }</span>
-                    <Icon style={{ marginTop: '-5px' }} className='kpi-icon' type={ require('../../img/svg/kpi.svg') } size='xs' />
-                    &nbsp;
-                    <span className='kpi'>{ `KPI ${ item.kpi }` }</span>
-                    <Icon style={{ marginTop: '10px' }} className='more-icon' type={ require('../../img/svg/point_three.svg') } size='md' />
-                  </div>
+                ii.map(item => (
+                  <FirstKnowledgeItem key={ item.id } handleClick={ id => handleFirstKnowledgeClick(id, handleContainerClose) } data={ item } />
                 ))
               }
-            </div>
+            </ul>
           ))
         }
       </Carousel>

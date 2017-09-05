@@ -108,30 +108,6 @@
   }
   .konwlede-module {
     margin-bottom: 38px;
-    .data-item {
-      @include s_blockDemo(auto, 109px);
-      @include s_fontDemo(20px, 109px, $font-4a);
-      box-shadow:0 1px 7px 0 rgba(0,0,0,0.06);
-      margin-bottom: 20px;
-      span {
-        display: inline-block;
-      }
-      .name-icon {
-        margin-left: 37px;
-        margin-right: 37px;
-      }
-      .name {
-        width: 170px;
-      }
-      .kpi {
-        color: $theme;
-        margin-left: 12px;
-        width: 205px;
-      }
-      .am-icon {
-        vertical-align: middle;
-      }
-    }
   }
   .close-mask {
     @include s_center;
@@ -145,12 +121,16 @@
       @include s_allCenter;
     }
   }
-}
-
-// 改变默认样式
-.knowledge-carousel {
-  width: 650px !important;
-  .slider-decorator-0 {
-    bottom: -38px !important;
+  // 改变默认样式
+  .knowledge-carousel {
+    .first-knowledge-item {
+      height: 109px;
+    }
+    .slider-list {
+      height: 500px;
+    }
+    .slider-decorator-0 {
+      bottom: -38px !important;
+    }
   }
 }

@@ -1,0 +1,41 @@
+@import "../common.scss";
+
+.first-knowledge {
+  padding: 20px 25px 0;
+  .fed-button {
+    width: 100%;
+    font-size: 26px;
+    color: $font-4a;
+    &:nth-of-type(1) {
+      background:#ffffff;
+      box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+    }
+    &:nth-of-type(2) {
+      background: none;
+      @include s_center;
+      bottom: 30px;
+      border:1px solid #4a4a4a;
+      border-radius:10px;
+      width: 93%;
+    }
+  }
+  .header {
+    border-bottom:1px dashed #979797;
+    margin-bottom: 30px;
+    .select-header-item {
+      display: inline-block;
+      width: 25%;
+      @include s_fontDemo(22px, 88px, $font-00);
+      &.in-use {
+        @include s_fontDemo(24px, 88px, $font-4a);
+        text-align: right;
+        span {
+          color: $font-d9;
+        }
+      }
+    }
+  }
+  .slider-list {
+    height: 750px !important;
+  }
+}

@@ -60,13 +60,18 @@ export default class SetKnowledge extends Component {
     const { currentIndex, setKnowledgeList } = this.state
     const datas = JSON.parse(JSON.stringify(selectHeaders))
     datas[currentIndex].isSelected = true
+
+    let totalNum = 0
+    setKnowledgeList.forEach(o => {
+      if (o.inUse) totalNum++
+    })
     return (
       <div className='konwledge'>
         <div className='header'>
           {
             datas.map((item, index) => <SelectHeaderItem key={ item.title } { ...{ handleClick: this.handleClickSelect, index, ...item } } />)
           }
-          <div className='select-header-item in-use'>使用中(<span>3/3</span>)</div>
+          <div className='select-header-item in-use'>使用中(<span>{ `${ totalNum }/3` }</span>)</div>
         </div>
         <div className='set-knowledge-list'>
           {
@@ -94,7 +99,6 @@ const SelectHeaderItem = ({ handleClick, index, title, isSelected }) => {
 }
 
 const SetKnowledgeItem = ({ inUse, content, title, num, handleChangeStatus, index }) => {
-  console.log('inUse', inUse)
   return (
     <div className={ inUse ? 'set-knowledge-item active' : 'set-knowledge-item' }>
       <div className='item-left'>

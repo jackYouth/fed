@@ -1,0 +1,70 @@
+@import "../common.scss";
+
+.schedule {
+  color: #0b3688;
+  .schedule-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    background: $bg-ff;
+    .am-icon {
+      display: block;
+      margin-right: 50px;
+    }
+    span {
+      @include s_fontDemo(28px, 126px, #0b3688);
+    }
+  }
+  .banner {
+    background: $bg-ff;
+    margin-bottom: 20px;
+    h1 {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px dashed #0b3688;
+      padding: 0 40px;
+      span {
+        @include s_fontDemo(24px, 80px, #0b3688);
+      }
+      .am-icon:last-of-type {
+        transform: rotate(180deg);
+      }
+    }
+    .date-list {
+      overflow: hidden;
+      padding-top: 25px;
+      li {
+        box-sizing: border-box;
+        width: calc(100% / 7);
+        margin-bottom: 38px;
+        float: left;
+        text-align: center;
+        @include s_fontDemo(18px, 48px, inherit);
+        p {
+          width: 48px;
+          text-align: center;
+          margin: 0 auto;
+          box-sizing: border-box;
+          &.flag {
+            border: 1px solid #0b3688;
+            width: 46px;
+            line-height: 46px;
+          }
+          &.active {
+            background: #0b3688;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .schedule-bottom {
+    @include s_fontDemo(24px, 126px, inherit);
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 45px;
+  }
+}

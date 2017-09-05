@@ -1,0 +1,36 @@
+@import "../common.scss";
+
+.first-knowledge-item {
+  @include s_blockDemo(auto, 80px);
+  @include s_fontDemo(20px, 80px, $font-4a);
+  box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
+  background: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  p {
+    flex: 1;
+    display: flex;
+    align-items: center;
+  }
+  span {
+    display: inline-block;
+  }
+  .name-icon {
+    margin-left: 37px;
+    margin-right: 37px;
+    margin-top: -10px;
+  }
+  .kpi {
+    color: $theme;
+    margin-left: 12px;
+    width: 205px;
+  }
+  .am-icon {
+    vertical-align: middle;
+  }
+  .more-icon {
+    margin-right: 37px;
+  }
+}
