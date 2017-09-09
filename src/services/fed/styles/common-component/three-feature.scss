@@ -1,0 +1,28 @@
+@import "../common.scss";
+
+.three-reature {
+  overflow: hidden;
+  position: absolute;
+  right: 20px;
+  bottom: 114px;
+  width: 340px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  a {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    background: $bg-ff;
+    margin-bottom: 26px;
+    text-decoration: none;
+    span {
+      @include s_fontDemo(16px, 20px, #ef461b);
+    }
+  }
+}

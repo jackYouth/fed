@@ -2,6 +2,8 @@ import React from 'react'
 import { getStore } from '@boluome/common-lib'
 import { hashHistory } from 'react-router'
 
+import ThreeFeature from '../common-component/three-feature'
+
 import '../../styles/business/information.scss'
 
 const News = () => {
@@ -9,7 +11,7 @@ const News = () => {
     { id: 1, hasCoupon: true, content: '把麻辣小龙虾做的这么有逼格的也就我们了如果没吃过，那就快点来吧，周末全单8折抵用券可叠加哦！' },
     { id: 2, hasCoupon: false, content: '把麻辣小龙虾做的这么有逼格的也就我们了如果没吃过，那就快点来吧，周末全单8折抵用券可叠加哦！' },
   ]
-  const business = getStore('business', 'session')
+  const business = getStore('currentBusiness', 'session')
   return (
     <div className='information'>
       <div className='header' onClick={ () => hashHistory.push(`/fed/business/${ business }/news/inner`) }>
@@ -32,6 +34,7 @@ const News = () => {
           })
         }
       </ul>
+      <ThreeFeature direction={ 'column' } num={ 1 } />
     </div>
   )
 }

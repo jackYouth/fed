@@ -1,3 +1,8 @@
+/*
+  session:
+    getStore('currentBusi: repast & education
+*/
+
 import React, { Component } from 'react'
 import { hashHistory } from 'react-router'
 import { TabBar, Icon } from 'antd-mobile'

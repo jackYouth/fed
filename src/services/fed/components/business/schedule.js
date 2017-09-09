@@ -1,6 +1,8 @@
 import React from 'react'
 import { Icon } from 'antd-mobile'
 
+import ThreeFeature from '../common-component/three-feature'
+
 import '../../styles/business/schedule.scss'
 
 export default class Schedule extends React.Component {
@@ -58,6 +60,7 @@ export default class Schedule extends React.Component {
           <span>时间 10:00 - 18:00</span>
           <span>授课老师:Steven</span>
         </div>
+        <ThreeFeature />
       </div>
     )
   }

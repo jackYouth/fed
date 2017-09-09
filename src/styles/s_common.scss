@@ -108,25 +108,6 @@ $border-97: #979797;
   }
 }
 
-.s_title {
-  overflow: hidden;
-  position: relative;
-  margin-bottom: 33px;
-  height: 30px;
-  p {
-    height: 14px;
-    @include s_border_b;
-  }
-  h1 {
-    @include s_fontDemo(22px, 30px, $font-4a);
-    @include s_allCenter;
-    text-align: center;
-    font-weight: normal;
-    width: 180px;
-    background: $bg-f5;
-  }
-}
-
 /* antd默认样式修改*/
 /* Modal*/
 .am-modal-body {

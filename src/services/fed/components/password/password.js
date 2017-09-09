@@ -17,7 +17,7 @@ export default class PasswordItem extends Component {
   }
   render() {
     const { passwordStatus } = this.state
-    const business = getStore('business', 'session') ? getStore('business', 'session') : 'repast'
+    const business = getStore('currentBusiness', 'session') ? getStore('currentBusiness', 'session') : 'repast'
     console.log('business', business)
     const type = business === 'repast' ? 'voice' : 'text'
     return (

@@ -47,7 +47,7 @@ export default class SecondKnowledge extends Component {
     return (
       <div className='knowlege-index'>
         <h1 className='s_container'>
-          <Icon style={{ marginTop: '10px' }} type={ require('../../img/svg/tea_o.svg') } size='md' />
+          <Icon type={ require('../../img/svg/tea_o.svg') } size='md' />
           没有什么事情会阻碍我们
         </h1>
         {
@@ -64,8 +64,8 @@ export default class SecondKnowledge extends Component {
           className='s_container to-select'
           onClick={ () => Mask(<AllKnowledge handleFirstKnowledgeClick={ this.handleFirstKnowledgeClick } />, { style: { zIndex: 1000 } }) }
         >
-          <Icon style={{ marginTop: '20px' }} type={ require('../../img/svg/move.svg') } size='xs' />
-          选择知识库
+          <Icon type={ require('../../img/svg/move.svg') } size='xs' />
+          <span>选择知识库</span>
         </h1>
       </div>
     )

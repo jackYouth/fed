@@ -1,5 +1,9 @@
 @import "../common.scss";
 
+.educatioin-bg {
+  background: url(../../img/lianbang_bg.png);
+}
+
 .business {
   padding: 30px;
   height: 100%;
@@ -24,6 +28,17 @@
       .bottom {
         @include s_fontDemo(24px, 40px, $font-d9);
       }
+    }
+  }
+  .banner-education {
+    p {
+      text-align: right;
+      @include s_fontDemo(18px, 18px, #0b3688);
+    }
+    img {
+      width: 80%;
+      display: block;
+      margin: 15px auto 36px;
     }
   }
   .service {

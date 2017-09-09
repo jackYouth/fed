@@ -1,6 +1,7 @@
 import React from 'react'
 
 import '../../styles/business/information-inner.scss'
+import ThreeFeature from '../common-component/three-feature'
 
 const InformationInner = () => {
   return (
@@ -9,6 +10,7 @@ const InformationInner = () => {
       <p className='time'>2017.09.15</p>
       <div className='content'>内容区</div>
       <p>阅读 10万+</p>
+      <ThreeFeature direction={ 'column' } num={ 1 } />
     </div>
   )
 }

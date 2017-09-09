@@ -1,4 +1,4 @@
-@import "./common.scss";
+@import "../common.scss";
 
 .reserve-suc {
   .container {
@@ -36,5 +36,6 @@
   }
   .fed-button {
     margin-top: 50px;
+    width: 84%;
   }
 }

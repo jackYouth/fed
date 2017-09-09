@@ -34,7 +34,7 @@ export default class KnowledgeItem extends Component {
         </div>
         <p className='number'>共有<span>1,932,987</span>人添加该库</p>
         <p className='knowledge-item-button' onClick={ () => handleClick(1) }>
-          <Icon style={{ marginTop: '10px' }} type={ require('../../img/svg/add_ff.svg') } size='md' />
+          <Icon type={ require('../../img/svg/add_ff.svg') } size='md' />
           添加
         </p>
       </li>

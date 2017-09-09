@@ -3,8 +3,10 @@
 .konwledge {
   padding: 0 25px;
   .header {
+    display: flex;
     .select-header-item {
-      display: inline-block;
+      display: flex;
+      align-items: center;
       width: 25%;
       @include s_fontDemo(22px, 88px, $font-00);
       &.in-use {
@@ -27,6 +29,7 @@
       display: flex;
       .item-left {
         flex: 1;
+        margin-right: 30px;
         .item-title {
           @include s_fontDemo(24px, 40px, $font-4a);
         }
@@ -52,7 +55,7 @@
         }
       }
       .item-right {
-        width: 160px;
+        width: 130px;
         display: flex;
         align-items: center;
         @include s_fontDemo(24px, 24px, $font-4a);

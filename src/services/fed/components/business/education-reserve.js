@@ -3,7 +3,7 @@ import { setStore, getStore } from '@boluome/common-lib'
 import { Icon } from 'antd-mobile'
 import { hashHistory } from 'react-router'
 
-import '../../styles/reserve.scss'
+import '../../styles/business/reserve.scss'
 
 export default class Reserve extends React.Component {
   constructor(props) {
@@ -63,7 +63,7 @@ export default class Reserve extends React.Component {
     educationReserveList.push(reserveInfo)
     setStore('educationReserveList', educationReserveList, 'session')
     console.log('educationReserveList', educationReserveList)
-    const business = getStore('business', 'session')
+    const business = getStore('currentBusiness', 'session')
     hashHistory.push(`/fed/business/${ business }/reserve/suc`)
   }
   handlePhoneIconClick() {

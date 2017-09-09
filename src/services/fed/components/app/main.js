@@ -15,9 +15,9 @@ export default class Main extends Component {
     }
     this.handleChangeStatus = this.handleChangeStatus.bind(this)
   }
-  componentWillMount() {
-    const callback = entradas => {
-      this.setState({ entradas })
+  componentDidMount() {
+    const callback = data => {
+      this.setState({ entradas: data })
     }
     getFedIndex(callback)
   }
@@ -45,8 +45,11 @@ export default class Main extends Component {
   }
   handleChangeStatus(index) {
     const { entradas } = this.state
-    const i = entradas.splice(index, 1)
-    entradas.splice(1, 0, i)
+    const i = entradas.splice(index, 1)[0]
+    const ii = entradas.splice(0, 1)[0]
+    entradas.unshift(i)
+    entradas.unshift(ii)
+    console.log('entradas', entradas)
     this.setState({ entradas })
   }
   render() {
@@ -77,6 +80,7 @@ export default class Main extends Component {
               <p>已发放 2,948,593.39 学习基金</p>
             </div>
             {
+              entradas &&
               entradas.map((item, i) => <SelectedItem handleChangeStatus={ this.handleChangeStatus } key={ item.title } entradaItem={ item } index={ i } />)
             }
             <div className='use-tips selected-item'>
@@ -95,7 +99,7 @@ const SelectedItem = ({ entradaItem, index, handleChangeStatus }) => {
   const { title } = entradaItem
   return (
     <div className='selected-item'>
-      <Icon onClick={ (index !== 0 && index !== 1) ? handleChangeStatus(index) : '' } type={ index <= 1 ? require('../../img/svg/circle_a.svg') : require('../../img/svg/circle_7b.svg') } size='md' />
+      <Icon onClick={ (index !== 0 && index !== 1) ? () => handleChangeStatus(index) : '' } type={ index <= 1 ? require('../../img/svg/circle_a.svg') : require('../../img/svg/circle_7b.svg') } size='md' />
       <p className='text'>{ title }</p>
     </div>
   )

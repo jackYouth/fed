@@ -14,7 +14,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapFunToComponent  = () => ({
   componentWillMount() {
-    setStore('business', 'repast', 'session')
+    setStore('currentBusinessness', 'education', 'session')
   },
 })
 

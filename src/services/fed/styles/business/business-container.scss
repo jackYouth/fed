@@ -1,0 +1,31 @@
+@import "../common.scss";
+
+.business-container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  .business-container-top {
+    flex: 1;
+    overflow-y: auto;
+    padding-bottom: 20px;
+  }
+  .business-container-bottom {
+    height: 100px;
+    background: $bg-ff;
+    display: flex;
+    position: relative;
+    z-index: 2;
+    li {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      @include s_fontDemo(20px, 28px, #000);
+    }
+  }
+  .fed-button {
+    @include s_center;
+    bottom: 50px;
+  }
+}

@@ -3,7 +3,7 @@ import { setStore, getStore } from '@boluome/common-lib'
 import { Icon } from 'antd-mobile'
 import { hashHistory } from 'react-router'
 
-import '../../styles/reserve.scss'
+import '../../styles/business/reserve.scss'
 
 export default class WaimaiReserve extends React.Component {
   constructor(props) {
@@ -69,7 +69,7 @@ export default class WaimaiReserve extends React.Component {
     reserveInfo.id = 20000000000 + reserveList.length
     reserveList.push(reserveInfo)
     setStore('reserveList', reserveList, 'session')
-    const business = getStore('business', 'session')
+    const business = getStore('currentBusiness', 'session')
     hashHistory.push(`/fed/business/${ business }/reserve/suc`)
   }
   handlePhoneIconClick() {

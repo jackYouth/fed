@@ -7,8 +7,8 @@ import '../../styles/business/address.scss'
 const FItem = Flex.Item
 
 const Address = () => {
-  const address = getStore('address', 'session')
-  const phone = getStore('phone', 'session')
+  const address = getStore('address', 'session') ? getStore('address', 'session') : '大连西岗区黄河路273号'
+  const phone = getStore('phone', 'session') ? getStore('phone', 'session') : '18888888888'
   return (
     <div className='business-address'>
       <img className='bg' src={ require('../../img/waimai_address_bg.png') } alt='business_address_bg' />

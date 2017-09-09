@@ -92,7 +92,7 @@ export default class SetKnowledge extends Component {
 const SelectHeaderItem = ({ handleClick, index, title, isSelected }) => {
   return (
     <div className='select-header-item' onClick={ () => handleClick(index) }>
-      <Icon style={{ marginTop: '28px', float: 'left' }} type={ isSelected ? require('../../img/svg/arrow_down_09.svg') : require('../../img/svg/arrow_up_d8.svg') } size='xxs' />
+      <Icon type={ isSelected ? require('../../img/svg/arrow_down_09.svg') : require('../../img/svg/arrow_up_d8.svg') } size='xxs' />
       { title }
     </div>
   )

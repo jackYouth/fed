@@ -4,6 +4,17 @@
 
 $fed_theme: #ef461b;
 
+.education-bg {
+  background: #0b3688 !important;
+}
+
+.education-bgc {
+  background: #0b3688 !important;
+}
+.education-c {
+  color: #0b3688 !important;
+}
+
 .am-tab-bar {
   height: calc(100% - 100px);
   position: relative;
@@ -37,10 +48,11 @@ $fed_theme: #ef461b;
   background: #fff;
   @include s_border_b;
   margin-bottom: 25px;
+  display: flex;
+  align-items: center;
   img {
     float: left;
     margin-right: 20px;
-    margin-top: 20px;
   }
   span {
     float: left;
@@ -55,10 +67,6 @@ $fed_theme: #ef461b;
   text-align: center;
   box-shadow:0 2px 9px 0 rgba(0,0,0,0.06);
   border-radius:10px;
-}
-
-.education-bg {
-  background: #0b3688 !important;
 }
 
 .point-green {
@@ -84,5 +92,25 @@ $fed_theme: #ef461b;
   }
   p {
     @include s_fontDemo(28px, 40px, $fed_theme);
+  }
+}
+
+
+.s_title {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 33px;
+  height: 30px;
+  p {
+    height: 14px;
+    @include s_border_b;
+  }
+  h1 {
+    @include s_fontDemo(22px, 30px, $font-4a);
+    @include s_allCenter;
+    text-align: center;
+    font-weight: normal;
+    width: 180px;
+    // background: $bg-f5;
   }
 }

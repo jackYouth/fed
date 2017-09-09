@@ -1,6 +1,8 @@
 import React from 'react'
 import { Icon, List } from 'antd-mobile'
 
+import ThreeFeature from '../common-component/three-feature'
+
 import '../../styles/business/self-course.scss'
 
 const LItem = List.Item
@@ -29,6 +31,7 @@ const SelfCourse = () => {
         <img src={ require('../../img/self_course_icon_1.png') } alt='self_course_icon_1' />
         <span>本月连续签到27次 继续保持！</span>
       </p>
+      <ThreeFeature direction={ 'column' } />
     </div>
   )
 }

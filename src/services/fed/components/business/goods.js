@@ -42,7 +42,7 @@ export default class Goods extends Component {
     this.setState({ cartNum, allPrice, goodList })
   }
   handleToOrder(goodList) {
-    const business = getStore('business', 'session')
+    const business = getStore('currentBusiness', 'session')
     setStore('businessList', goodList, 'session')
     hashHistory.push(`/fed/business/${ business }/waimai/order`)
   }

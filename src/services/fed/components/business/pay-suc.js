@@ -7,7 +7,7 @@ import '../../styles/business/pay-suc.scss'
 
 const PaySuc = () => {
   const price = getStore('orderPrice', 'session')
-  const business = getStore('business', 'session')
+  const business = getStore('currentBusiness', 'session')
   return (
     <div className='pay-suc'>
       <div className='common-header'>

@@ -39,12 +39,14 @@ const Routes = () => (
         <Route path='attention' component={ require('react-router?name=my-attention!./components/my-apps/my-attention') } />
         <Route path='search' component={ require('react-router?name=business-search!./components/my-apps/business-search') } />
       </Route>
-      <Route path='business/:businessName'>
+      <Route path='business/:businessName' component={ require('react-router?name=business!./components/business/business-container') }>
         <IndexRoute component={ require('react-router?name=business!./containers/business') } />
         <Route path='reserve'>
           <IndexRoute component={ require('react-router?name=reserve!./components/business/reserve') } />
           <Route path='suc' component={ require('react-router?name=reserve-suc!./components/business/reserve-suc') } />
         </Route>
+        <Route path='selfCourse' component={ require('react-router?name=selfCourse!./components/business/self-course') } />
+        <Route path='schedule' component={ require('react-router?name=schedule!./components/business/schedule') } />
         <Route path='waimai'>
           <IndexRoute component={ require('react-router?name=goods!./components/business/goods') } />
           <Route path='order' component={ require('react-router?name=order!./components/business/order') } />
@@ -62,7 +64,6 @@ const Routes = () => (
           <Route path='reserveInfo' component={ require('react-router?name=reserve-info!./components/business/reserve-info') } />
           <Route path='waimaiInfo' component={ require('react-router?name=waimai-info!./components/business/waimai-info') } />
         </Route>
-        <Route path='schedule' component={ require('react-router?name=schedule!./components/business/schedule') } />
       </Route>
     </Route>
   </Router>

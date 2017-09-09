@@ -5,7 +5,8 @@ import WaimaiReserve from './waimai-reserve'
 import EducationReserve from './education-reserve'
 
 const Reserve = () => {
-  const type = getStore('business', 'session') ? getStore('business', 'session') : 'repast'
+  const type = getStore('currentBusiness', 'session') ? getStore('currentBusiness', 'session') : 'repast'
+  console.log('type', type)
   return (
     <div>
       {

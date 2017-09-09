@@ -22,8 +22,10 @@
   .header {
     border-bottom:1px dashed #979797;
     margin-bottom: 30px;
+    display: flex;
     .select-header-item {
-      display: inline-block;
+      display: flex;
+      align-items: center;
       width: 25%;
       @include s_fontDemo(22px, 88px, $font-00);
       &.in-use {
