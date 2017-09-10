@@ -36,7 +36,7 @@ export default class FirstKnowledge extends Component {
   }
   handleClick(id) {
     setStore('firstId', id, 'session')
-    hashHistory.push('/fed/knowledge/second')
+    hashHistory.push('/knowledge/second')
   }
   render() {
     const datas = [
@@ -60,7 +60,7 @@ export default class FirstKnowledge extends Component {
           className='knowledge-carousel'
           autoplay={ Boolean('') }
           infinite
-          selectedIndex={ 1 }
+          selectedIndex={ 0 }
           swipeSpeed={ 35 }
           beforeChange={ (from, to) => console.log(`slide from ${ from } to ${ to }`) }
           afterChange={ index => console.log('slide to', index) }
@@ -78,7 +78,7 @@ export default class FirstKnowledge extends Component {
             )
           }
         </Carousel>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed/knowledge') }>返回知识库</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/knowledge') }>返回知识库</p>
       </div>
     )
   }

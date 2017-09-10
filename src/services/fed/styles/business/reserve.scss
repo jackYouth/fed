@@ -14,6 +14,9 @@
       height: 89px;
       @include s_border_b;
       position: relative;
+      display: flex;
+      justify-content: space-between;
+      padding-right: 30px;
       &:first-of-type {
         div {
           width: 50%;
@@ -29,13 +32,14 @@
       }
       @include s_fontDemo(24px, 90px, #9b9b9b);
       .title {
-        margin-left: 70px;
+        margin-left: 20px;
+        margin-right: 20px;
         width: 150px;
         height: 90px;
         float: left;
       }
       .content {
-        width: 326px;
+        width: 350px;
         float: left;
         position: relative;
         p {
@@ -44,7 +48,7 @@
           padding-left: 10px;
           .am-icon {
             @include s_middle;
-            right: -50px;
+            right: 0px;
             color: #ef461b;
           }
           input {
@@ -63,6 +67,9 @@
           position: absolute;
           background: #fff;
           width: 100%;
+          text-overflow: ellipsis;
+          overflow: auto;
+          white-space: nowrap;
           z-index: 1;
           @include s_border;
           border-top: none;
@@ -79,8 +86,8 @@
   .options {
     padding-top: 40px;
     padding-bottom: 40px;
-    margin-left: 70px;
-    margin-right: 43px;
+    margin-left: 20px;
+    margin-right: 20px;
     .title {
       padding-bottom: 28px;
       @include s_fontDemo(24px, 24px, #9b9b9b);
@@ -112,5 +119,14 @@
         }
       }
     }
+  }
+  .fed-button {
+    position: relative;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: auto;
+    transform: translate(0);
+    left: auto;
+    bottom: auto;
   }
 }

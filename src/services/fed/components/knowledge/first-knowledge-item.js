@@ -4,8 +4,9 @@ import { Icon  } from 'antd-mobile'
 import '../../styles/knowledge/first-knowledge-item.scss'
 
 const FirstKnowledgeItem = ({ data, handleClick }) => {
+  console.log('data', data)
   return (
-    <li onClick={ () => handleClick(data.id) } className='first-knowledge-item' key={ data.id }>
+    <li onClick={ () => data.status === 1 && handleClick(data.id) } className='first-knowledge-item' key={ data.id }>
       <p>
         <Icon className='name-icon' type={ require('../../img/svg/tea_09.svg') } size='md' />
         <span className='name'>{ data.title }</span>

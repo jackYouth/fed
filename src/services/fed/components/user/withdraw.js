@@ -27,8 +27,8 @@ export default class Withdraw extends Component {
           </p>
           <p><span>可提现金额</span> <span>88.88</span></p>
         </div>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed/user') }>返回个人中心</p>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed/user/withdrawSuc') }>提现至银行卡</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/user') }>返回个人中心</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/user/withdrawSuc') }>提现至银行卡</p>
       </div>
     )
   }

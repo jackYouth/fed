@@ -27,7 +27,7 @@ const ReserveSuc = () => {
           </div>
         </div>
       </div>
-      <p className={ isEducation ? 'education-bg fed-button' : 'fed-button' } onClick={ () => hashHistory.push(`/fed/business/${ business }`) }>返回商家</p>
+      <p className={ isEducation ? 'education-bg fed-button' : 'fed-button' } onClick={ () => hashHistory.push(`/business/${ business }`) }>返回商家</p>
     </div>
   )
 }

@@ -37,11 +37,15 @@ export default class PriceDetail extends Component {
     return (
       <div className='price-detail'>
         <div className='price-detail-top item'>
-          <span className='point-green' />
-          <span>资金明细</span>
-          <span>收入+198</span>
-          <span>支出-130</span>
-          <span>净资产+68 ／¥</span>
+          <p>
+            <span className='point-green' />
+            <span>资金明细</span>
+          </p>
+          <p>
+            <span>收入+198</span>
+            <span>支出-130</span>
+            <span>净资产+68 ／¥</span>
+          </p>
         </div>
         <ul className='filter-list'>
           {
@@ -59,7 +63,7 @@ export default class PriceDetail extends Component {
         <ul className='price-list'>
           {
             priceList.map(o => (
-              <li key={ o.id } className='item' onClick={ () => hashHistory.push('/fed/user/priceDetail') }>
+              <li key={ o.id } className='item' onClick={ () => hashHistory.push('/user/priceDetail') }>
                 <Icon type={ o.icon } size='xs' />
                 <span>{ o.text }</span>
                 <Icon type={ require('../../img/svg/more.svg') } size='md' />
@@ -68,7 +72,7 @@ export default class PriceDetail extends Component {
             ))
           }
         </ul>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed/user') }>返回个人中心</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/user') }>返回个人中心</p>
       </div>
     )
   }

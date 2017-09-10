@@ -6,7 +6,7 @@ import { hashHistory } from 'react-router'
 import '../../styles/business/pay-suc.scss'
 
 const PaySuc = () => {
-  const price = getStore('orderPrice', 'session')
+  const price = getStore('totalPrice', 'session')
   const business = getStore('currentBusiness', 'session')
   return (
     <div className='pay-suc'>
@@ -22,9 +22,9 @@ const PaySuc = () => {
           <span>支付成功</span>
         </p>
         <p>¥<span>{ price }</span></p>
-        <p onClick={ () => hashHistory.push(`/fed/business/${ business }/center/waimaiInfo`) }>查看订单</p>
+        <p onClick={ () => hashHistory.push(`/business/${ business }/center/waimaiInfo`) }>查看订单</p>
       </div>
-      <p className='fed-button' onClick={ () => hashHistory.push(`/fed/business/${ business }`) }>返回商家</p>
+      <p className='fed-button' onClick={ () => hashHistory.push(`/business/${ business }`) }>返回商家</p>
     </div>
   )
 }

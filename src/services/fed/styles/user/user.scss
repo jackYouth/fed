@@ -1,6 +1,8 @@
 @import "../common.scss";
 
 .user {
+  height: 100%;
+  overflow: auto;
   .container {
     padding: 25px;
     .top {

@@ -64,7 +64,7 @@ export default class Reserve extends React.Component {
     setStore('educationReserveList', educationReserveList, 'session')
     console.log('educationReserveList', educationReserveList)
     const business = getStore('currentBusiness', 'session')
-    hashHistory.push(`/fed/business/${ business }/reserve/suc`)
+    hashHistory.push(`/business/${ business }/reserve/suc`)
   }
   handlePhoneIconClick() {
     this.phoneIpt.focus()

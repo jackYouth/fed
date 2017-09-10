@@ -21,7 +21,7 @@ const VerificationSuc = () => {
         <h1>{ businessSlogan.titleLeft }<span>.</span>{ businessSlogan.titleRight }</h1>
         <p>{ businessSlogan.content }</p>
       </div>
-      <p className='fed-button' onClick={ () => hashHistory.push('/fed/main/focusBusiness') }>完成</p>
+      <p className='fed-button' onClick={ () => hashHistory.push('/main/focusBusiness') }>完成</p>
     </div>
   )
 }

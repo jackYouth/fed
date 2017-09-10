@@ -19,7 +19,7 @@ export default class ContributionSuc extends Component {
         <Icon type={ require('../../img/svg/selected_green.svg') } size='lg' />
         <p>提交成功</p>
         <p>您提交的知识我们已经收到了，它将在3个工作日内得到审验，结果将在您的个人中心中得到反馈</p>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed') }>返回首页</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('') }>返回首页</p>
       </div>
     )
   }

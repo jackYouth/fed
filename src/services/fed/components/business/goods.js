@@ -44,7 +44,7 @@ export default class Goods extends Component {
   handleToOrder(goodList) {
     const business = getStore('currentBusiness', 'session')
     setStore('businessList', goodList, 'session')
-    hashHistory.push(`/fed/business/${ business }/waimai/order`)
+    hashHistory.push(`/business/${ business }/waimai/order`)
   }
   render() {
     const goodsData = [
@@ -76,7 +76,7 @@ export default class Goods extends Component {
             外卖配送起止时间9:00-22:00(仅限四区）
           </p>
         </div>
-        <ul>
+        <ul className='goods-list'>
           {
             goodsData.map(o => <GoodItem key={ o.id } goodInfo={ o } handleAddGood={ this.handleAddGood } { ...o } />)
           }

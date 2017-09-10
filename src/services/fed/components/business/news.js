@@ -14,7 +14,7 @@ const News = () => {
   const business = getStore('currentBusiness', 'session')
   return (
     <div className='information'>
-      <div className='header' onClick={ () => hashHistory.push(`/fed/business/${ business }/news/inner`) }>
+      <div className='header' onClick={ () => hashHistory.push(`/business/${ business }/news/inner`) }>
         <p>把麻辣小龙虾做的这么有逼格的也就我们了</p>
       </div>
       <ul>

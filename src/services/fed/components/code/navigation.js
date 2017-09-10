@@ -36,7 +36,7 @@ export default class Navigation extends React.Component {
           </p>
         </div>
         <div className='bottom'>
-          <Icon onClick={ () => hashHistory.push('/fed/main/nearDevice') } type='cross' style={{ color: '#4a4a4a' }} size='md' />
+          <Icon onClick={ () => hashHistory.push('/main/nearDevice') } type='cross' style={{ color: '#4a4a4a' }} size='md' />
           查看全览
           <Icon type={ require('../../img/svg/point_three_4a.svg') } size='md' />
         </div>

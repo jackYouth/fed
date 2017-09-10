@@ -32,7 +32,7 @@ export default class PriceList extends Component {
             <p>进入联邦教育</p>
           </div>
         </li>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed/user/priceList') }>返回资金明细</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/user/priceList') }>返回资金明细</p>
       </ul>
     )
   }

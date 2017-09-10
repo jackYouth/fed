@@ -24,31 +24,31 @@ export default class UserCenter extends Component {
             </h1>
             <p>¥<span>88.88</span></p>
             <p>
-              <span onClick={ () => hashHistory.push('/fed/user/withdraw') }>提现</span>
-              <span onClick={ () => hashHistory.push('/fed/user/receiveMoney') }>9.91元可领取</span>
+              <span onClick={ () => hashHistory.push('/user/withdraw') }>提现</span>
+              <span onClick={ () => hashHistory.push('/user/receiveMoney') }>9.91元可领取</span>
             </p>
-            <p className='detail' onClick={ () => hashHistory.push('/fed/user/priceList') }><Icon type={ require('../../img/svg/detail_09.svg') } size='xxs' /><span>明细</span></p>
+            <p className='detail' onClick={ () => hashHistory.push('/user/priceList') }><Icon type={ require('../../img/svg/detail_09.svg') } size='xxs' /><span>明细</span></p>
           </div>
-          <div className='my-item' onClick={ () => hashHistory.push('/fed/user/contribution') }>
+          <div className='my-item' onClick={ () => hashHistory.push('/user/contribution') }>
             <span className='point-green' />
             <span>我的贡献</span>
             <span className='tips no-read'>未读</span>
           </div>
-          <div className='my-item' onClick={ () => hashHistory.push('/fed/knowledge') }>
+          <div className='my-item' onClick={ () => hashHistory.push('/knowledge') }>
             <span className='point-green' />
             <span>我的我的知识库</span>
           </div>
-          <div className='my-item' onClick={ () => hashHistory.push('/fed/user/achieve') }>
+          <div className='my-item' onClick={ () => hashHistory.push('/user/achieve') }>
             <span className='point-green' />
             <span>我的成就</span>
             <span className='tips num'>13/90</span>
           </div>
-          <div className='my-item' onClick={ () => hashHistory.push('/fed/myApps') }>
+          <div className='my-item' onClick={ () => hashHistory.push('/myApps') }>
             <span className='point-green' />
             <span>我的应用</span>
             <span className='tips new-tips'>新提醒</span>
           </div>
-          <div className='my-item' onClick={ () => hashHistory.push('/fed/user/setting') }>
+          <div className='my-item' onClick={ () => hashHistory.push('/user/setting') }>
             <span className='point-green' />
             <span>个人设置</span>
           </div>

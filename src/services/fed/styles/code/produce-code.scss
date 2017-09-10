@@ -101,7 +101,7 @@
     width: 90%;
     color: #d0011b;
     @include s_center;
-    bottom: 30px;
+    bottom: 130px;
     .footer-container {
       @include s_allCenter;
       width: 300px;
@@ -115,11 +115,19 @@
         float: left;
       }
     }
+    &.return-index {
+      width: 100% !important;
+      background: none;
+      @include s_border;
+      bottom: -100px;
+      color: $font-4a;
+    }
   }
   .banner {
     padding-top: 130px;
     img {
       display: block;
+      width: 50%;
       margin: 0 auto 130px;
     }
     p {

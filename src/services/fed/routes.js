@@ -3,7 +3,7 @@ import { Router, Route, hashHistory, IndexRoute } from 'react-router'
 // 路由配置
 const Routes = () => (
   <Router history={ hashHistory } >
-    <Route path='/fed'>
+    <Route path='/'>
       <IndexRoute component={ require('react-router?name=app!./containers/app') } />
       <Route path='main'>
         <IndexRoute component={ require('react-router?name=app!./containers/app') } />

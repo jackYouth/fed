@@ -22,16 +22,15 @@
   }
   .order-item-container {
     .order-item {
-      padding: 21px 15px 28px 45px;
+      padding: 21px 0px 28px 20px;
       background: #fff;
       overflow: hidden;
       margin-bottom: 15px;
       .left {
         float: left;
         @include s_fontDemo(24px, 45px, $font-4a);
-        margin-right: 50px;
+        width: calc(100% - 190px);
         p {
-          width: 450px;
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
@@ -44,7 +43,7 @@
         }
       }
       .right {
-        float: left;
+        float: right;
         position: relative;
         height: 180px;
         width: 190px;
@@ -53,6 +52,8 @@
           overflow: hidden;
           @include s_middle;
           width: 190px;
+          display: flex;
+          justify-content: center;
           .am-icon, p {
             float: left;
           }
@@ -78,13 +79,19 @@
           border-top: 1px solid #e5e5e5;
           padding-top: 20px;
           display: flex;
+          justify-content: center;
           align-items: center;
           width: 100%;
           .div-container {
+            display: flex;
+            align-items: center;
             li {
-              float: left;
               box-sizing: border-box;
               @include s_fontDemo(20px, 46px, $font-4a);
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
               p:first-of-type {
                 overflow: hidden;
                 .am-icon {

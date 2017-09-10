@@ -57,7 +57,7 @@ export default class App extends Component {
                 this.setState({
                   selectedTab: 'tab2',
                 })
-                hashHistory.push('/fed/knowledge')
+                hashHistory.push('/knowledge')
               }
             }
             data-seed='logId1'

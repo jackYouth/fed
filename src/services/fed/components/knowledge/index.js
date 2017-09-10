@@ -78,10 +78,10 @@ export default class SetKnowledge extends Component {
             setKnowledgeList.map((item, i) => <SetKnowledgeItem handleChangeStatus={ this.handleChangeStatus } index={ i } { ...item } key={ item.id } />)
           }
         </div>
-        <h1 className='s_container return-button' onClick={ () => hashHistory.push('/fed') }>
+        <h1 className='s_container return-button' onClick={ () => hashHistory.push('') }>
           返回首页
         </h1>
-        <h1 className='s_container set-button' onClick={ () => hashHistory.push('/fed/knowledge/first') }>
+        <h1 className='s_container set-button' onClick={ () => hashHistory.push('/knowledge/first') }>
           设置知识库
         </h1>
       </div>

@@ -8,7 +8,7 @@ let service = [
   { text: '一键wifi', icon: require('../img/svg/business_wifi.svg'), index: 1 },
   { text: '预定服务', icon: require('../img/svg/business_fw.svg'), index: 2 },
   { text: '甄选菜品', icon: require('../img/svg/business_cp.svg'), index: 3 },
-  { text: '外卖（全城）', icon: require('../img/svg/business_wm.svg'), index: 4 },
+  { text: '外卖', icon: require('../img/svg/business_wm.svg'), index: 4 },
   { text: '优惠券', icon: require('../img/svg/business_yhq.svg'), index: 5 },
 ]
 const flagBoolean = getStore('currentBusiness', 'session') === 'education'

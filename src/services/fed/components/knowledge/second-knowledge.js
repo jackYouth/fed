@@ -13,8 +13,11 @@ import '../../styles/knowledge/second-knowledge.scss'
 export default class SecondKnowledge extends Component {
   constructor(props) {
     super(props)
+    // limit: 当前二级分类数据的长度， currentLeft表示当前list容器的marginLeft值
     this.state = {
-      datas: {},
+      datas:       {},
+      currentLeft: 0,
+      limit:       1,
     }
     this.getData = this.getData.bind(this)
     this.handleFirstKnowledgeClick = this.handleFirstKnowledgeClick.bind(this)
@@ -24,26 +27,64 @@ export default class SecondKnowledge extends Component {
     getSecondCategory(id, this.getData)
   }
   getData(datas) {
-    this.setState({ datas })
+    const begin = JSON.parse(JSON.stringify(datas[0]))
+    const after = JSON.parse(JSON.stringify(datas[datas.length - 1]))
+    begin.id = 'b'
+    after.id = 'a'
+    if (datas.length > 1) {
+      datas.push(begin)
+      datas.unshift(after)
+    }
+    datas.map(o => {
+      if (!o.img) o.img = require('../../img/knowledge_banner_1.png')
+      return o
+    })
+    this.setState({ datas, limit: datas.length - 2 })
   }
   handleClick(id) {
     addSecondCategory(id)
-    hashHistory.push('/fed/knowledge')
+    hashHistory.push('/knowledge')
   }
   handleFirstKnowledgeClick(id, handleContainerClose) {
     getSecondCategory(id, this.getData)
     handleContainerClose()
   }
 
+  handleStart(e) {
+    const { clientX } = e.touches[0]
+    this.beginPoint = { clientX }
+  }
+
+  handleEnd(e) {
+    let { currentLeft } = this.state
+    const { limit } = this.state
+    const { clientX } = e.changedTouches[0]
+    this.endPoint = { clientX }
+    // 右滑
+    if (clientX > this.beginPoint.clientX && currentLeft > 0) {
+      currentLeft--
+      console.log('左滑', currentLeft)
+    }
+    // 左滑
+    if (clientX < this.beginPoint.clientX && currentLeft < limit - 1) {
+      currentLeft++
+      console.log('右滑', currentLeft)
+    }
+    this.setState({ currentLeft })
+  }
+
   render() {
-    const knowledgeDatas = [
-      { img: require('../../img/knowledge_banner_1.png'), id: '1' },
-      { img: require('../../img/knowledge_banner_1.png'), id: '2' },
-      { img: require('../../img/knowledge_banner_1.png'), id: '3' },
-      { img: require('../../img/knowledge_banner_1.png'), id: '4' },
-    ]
-    const { datas } = this.state
+    // const knowledgeDatas = [
+    //   { img: require('../../img/knowledge_banner_1.png'), id: '1' },
+    //   { img: require('../../img/knowledge_banner_1.png'), id: '2' },
+    //   { img: require('../../img/knowledge_banner_1.png'), id: '3' },
+    //   { img: require('../../img/knowledge_banner_1.png'), id: '4' },
+    //   { img: require('../../img/knowledge_banner_1.png'), id: '5' },
+    //   { img: require('../../img/knowledge_banner_1.png'), id: '6' },
+    // ]
+    const { datas, currentLeft } = this.state
     console.log('secondDatas', datas)
+    if (!datas) return <div />
     return (
       <div className='knowlege-index'>
         <h1 className='s_container'>
@@ -51,11 +92,11 @@ export default class SecondKnowledge extends Component {
           没有什么事情会阻碍我们
         </h1>
         {
-          knowledgeDatas && knowledgeDatas.length > 0 &&
+          datas && datas.length > 0 &&
           <div className='knowledge-list-container'>
-            <ul className='knowledge-list'>
+            <ul style={{ marginLeft: `-${ currentLeft * 4.9 }rem`, width: `${ datas.length * 100 }%` }} className={ datas.length < 2 ? 'knowledge-list single' : 'knowledge-list' } onTouchStart={ e => this.handleStart(e) } onTouchEnd={ e => this.handleEnd(e) }>
               {
-                knowledgeDatas.map(item => <KnowledgeItem key={ item.id } { ...{ handleClick: this.handleClick, ...item } } />)
+                datas.map(item => <KnowledgeItem key={ item.id } { ...{ handleClick: this.handleClick, ...item } } />)
               }
             </ul>
           </div>

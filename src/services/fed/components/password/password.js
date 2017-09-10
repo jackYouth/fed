@@ -13,7 +13,7 @@ export default class PasswordItem extends Component {
   }
   handleChangeStatus() {
     this.setState({ passwordStatus: '正在验证' })
-    setTimeout(() => hashHistory.push('/fed/main/vertification'), 5000)
+    setTimeout(() => hashHistory.push('/main/vertification'), 5000)
   }
   render() {
     const { passwordStatus } = this.state

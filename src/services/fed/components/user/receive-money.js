@@ -26,7 +26,7 @@ const ReceiveMoney = () => {
           ))
         }
       </ul>
-      <p className='fed-button' onClick={ () => hashHistory.push('/fed/user') }>返回个人中心</p>
+      <p className='fed-button' onClick={ () => hashHistory.push('/user') }>返回个人中心</p>
     </div>
   )
 }

@@ -6,6 +6,9 @@
     margin-bottom: 25px;
     display: flex;
     align-items: center;
+    width: auto;
+    margin-left: 20px;
+    margin-right: 20px;
     .am-icon {
       margin-left: 20px;
       margin-right: 40px;
@@ -13,35 +16,41 @@
   }
   .knowledge-list-container {
     width: 100%;
-    height: 665px;
-    overflow-x: auto;
+    height: 800px;
+    overflow-x: hidden;
     .knowledge-list {
-      height: 665px;
+      height: 800px;
       position: relative;
+      transform: translateX(-300px);
+      width: 600%;
+      transition: 1s;
       @for $i from 1 through 30 {
         .knowledge-item:nth-of-type(#{ $i }) {
           left: 490px * ($i - 1);
         }
       }
+      &.single {
+        transform: translateX(0);
+        .knowledge-item {
+          @include s_center;
+        }
+      }
       .knowledge-item {
-        @include s_blockDemo(420px, auto);
+        @include s_blockDemo(420px, 700px !important);
         position: absolute;
-        &:first-of-type {
-          margin-left: 20px;
-        }
-        &:last-of-type {
-          padding-right: 20px;
-        }
+        margin-bottom: 15px;
         .img {
-          height: 500px;
+          height: 520px;
           img {
-            height: 500px;
+            height: 520px;
             display: block;
             margin: 0 auto;
           }
         }
         .type {
           display: flex;
+          height: 90px;
+          align-items: center;
           .type-item {
             flex: 1;
             height: 58px;
@@ -59,7 +68,7 @@
         .number {
           text-align: center;
           margin-bottom: 15px;
-          @include s_fontDemo(24px, 24px, $font-00);
+          @include s_fontDemo(24px, 36px, $font-00);
           span {
             color: $font-f48
           }
@@ -86,8 +95,13 @@
     bottom: 0px;
     display: flex;
     align-items: center;
+    width: 90%;
+    margin-left: 0;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     .am-icon {
-      margin-left: 240px;
       margin-right: 30px;
     }
   }

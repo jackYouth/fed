@@ -1,17 +1,19 @@
 @import "../common.scss";
 
-.educatioin-bg {
-  background: url(../../img/lianbang_bg.png);
-}
+// .educatioin-bg {
+//   background: url(../../img/lianbang_bg.png);
+// }
 
 .business {
   padding: 30px;
   height: 100%;
   overflow: auto;
+  background: $bg-ff;
   .banner {
     overflow: hidden;
     width: 100%;
     margin-bottom: 30px;
+    display: flex;
     .left {
       float: left;
       margin-left: 35px;
@@ -59,7 +61,7 @@
         }
       }
       p {
-        @include s_fontDemo(20px, 60px, $font-00);
+        @include s_fontDemo(20px, 40px, $font-00);
       }
     }
   }

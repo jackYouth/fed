@@ -3,8 +3,9 @@
 .good-order-container {
   height: 100%;
   .good-order {
-    height: calc(100% - 150px);
+    height: 100%;
     overflow: auto;
+    border-bottom: none !important;
     @include s_border_b;
     .common-header .content {
       width: 180px;
@@ -156,6 +157,7 @@
       padding-top: 40px;
       margin-left: 27px;
       margin-right: 30px;
+      margin-bottom: 50px;
       .title {
         @include s_fontDemo(32px, 44px, #979797);
 
@@ -172,7 +174,6 @@
         }
       }
       .bottom {
-        border:1px solid $fed_theme;
         width:219px;
         height:38px;
         @include s_fontDemo(18px, 38px, $fed_theme);
@@ -183,8 +184,11 @@
 
     .fed-button {
       background: #09bb07;
-      width: 90%;
-      bottom: 30px;
+      margin-left: 0px;
+      margin-right: 40px;
+      width: auto;
+      position: relative;
+      bottom: 0;
     }
 
     // 改变默认央视

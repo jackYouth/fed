@@ -1,12 +1,13 @@
-import { get } from '@boluome/common-lib'
 import { Loading } from '@boluome/oto_saas_web_app_component'
-import axios from 'axios'
+
+import { get, send } from './ajax'
 
 export const getFedIndex = callback => {
   const closeLoading = Loading()
-  get('/index').then(({ code, data, msg }) => {
+  get('/index').then(({ data }) => {
+    const { code, msg } = data
     if (code === 200) {
-      callback(data)
+      callback(data.data)
     } else {
       console.log(msg)
     }
@@ -16,9 +17,10 @@ export const getFedIndex = callback => {
 
 export const getKnowledgeIndex = callback => {
   const closeLoading = Loading()
-  get('/repository').then(({ code, data, msg }) => {
+  get('/repository').then(({ data }) => {
+    const { code, msg } = data
     if (code === 200) {
-      callback(data)
+      callback(data.data)
     } else {
       console.log(msg)
     }
@@ -28,10 +30,11 @@ export const getKnowledgeIndex = callback => {
 
 export const getTopCategory = callback => {
   const closeLoading = Loading()
-  get('/topCategoryList').then(({ code, data, msg }) => {
+  get('/topCategoryList').then(({ data }) => {
+    const { code, msg } = data
     if (code === 200) {
       console.log('getTopCategory', data)
-      callback(data)
+      callback(data.data)
     } else {
       console.log(msg)
     }
@@ -41,11 +44,11 @@ export const getTopCategory = callback => {
 
 export const getSecondCategory = (id, callback) => {
   const closeLoading = Loading()
-  axios.post('http://aapi.ddlass.com/setSecondCategory', { id }).then(({ code, data, msg }) => {
-    console.log('msg', msg)
+  id = Number(id)
+  send('/setSecondCategory', { id }).then(({ data }) => {
+    const { code, msg } = data
     if (code === 200) {
-      callback(data)
-      console.log('getSecondCategory', data)
+      callback(data.data)
     } else {
       console.log(msg)
     }
@@ -56,9 +59,10 @@ export const getSecondCategory = (id, callback) => {
 
 export const addSecondCategory = id => {
   const closeLoading = Loading()
-  axios.post('http://aapi.ddlass.com/addSecondCategory', { id }).then(({ code, data, msg }) => {
+  send('/addSecondCategory', { id }).then(({ data }) => {
+    const { code, msg } = data
     if (code === 200) {
-      console.log('addSecondCategory', data)
+      console.log('addSecondCategory', data.data)
     } else {
       console.log(msg)
     }
@@ -68,9 +72,10 @@ export const addSecondCategory = id => {
 
 export const updateRepositoryStatus = (id, status) => {
   const closeLoading = Loading()
-  axios.post('http://aapi.ddlass.com/updateRepositoryStatus', { id, status }).then(({ code, data, msg }) => {
+  send('/updateRepositoryStatus', { id, status }).then(({ data }) => {
+    const { code, msg } = data
     if (code === 200) {
-      console.log('updateRepositoryStatus', data)
+      console.log('updateRepositoryStatus', data.data)
     } else {
       console.log(msg)
     }
@@ -79,11 +84,26 @@ export const updateRepositoryStatus = (id, status) => {
 }
 
 
-export const getQrCode = id => {
+export const getQrCode = (id, callback) => {
   const closeLoading = Loading()
-  axios.post('http://aapi.ddlass.com/getQrCode', { id }).then(({ code, data, msg }) => {
+  send('/getQrCode', { id }).then(({ data }) => {
+    const { code, url, msg } = data
     if (code === 200) {
-      console.log('getQrCode', data)
+      callback(url)
+    } else {
+      console.log(msg)
+    }
+    closeLoading()
+  })
+}
+
+
+export const getResult = callback => {
+  const closeLoading = Loading()
+  get('/polling').then(({ data }) => {
+    const { code, type, msg } = data
+    if (code === 200) {
+      callback(type)
     } else {
       console.log(msg)
     }

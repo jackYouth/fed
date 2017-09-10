@@ -25,7 +25,7 @@ const nearDevice = () => {
         </div>
         {
           nearMachines.map(o => (
-            <div className='machine box' key={ o.name } onClick={ () => hashHistory.push('/fed/main/navigation') }>
+            <div className='machine box' key={ o.name } onClick={ () => hashHistory.push('/main/navigation') }>
               <img className='left' src={ require('../../img/machine.png') } alt='near-machine' />
               <div className='center'>
                 <p>{ o.name }</p>
@@ -46,7 +46,7 @@ const nearDevice = () => {
           <span>上滑获取更多位置</span>
         </p>
       </div>
-      <div className='fed-button' onClick={ () => hashHistory.push('/fed/main/code') }>
+      <div className='fed-button' onClick={ () => hashHistory.push('/main/code') }>
         <p className='footer-container'>
           <Icon type={ require('../../img/svg/arrow_left.svg') } size='md' />
           <span>返回二维码页面</span>

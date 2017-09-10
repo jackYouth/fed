@@ -12,7 +12,7 @@ const MyApp = () => {
         <span>城市加油站</span>
       </div>
       <ul className='apps'>
-        <li className='app-item' onClick={ () => hashHistory.push('/fed/myApps/attention') }>
+        <li className='app-item' onClick={ () => hashHistory.push('/myApps/attention') }>
           <p><Icon type={ require('../../img/svg/my_app_index.svg') } size='lg' /></p>
           <p>来 &nbsp; 啦</p>
         </li>

@@ -8,12 +8,12 @@ import '../../styles/my-app/my-app.scss'
 export default class businessSearch extends Component {
   handleToBusiness(i) {
     if (i === 2) {
-      setStore('business', 'education', 'session')
-      hashHistory.push('/fed/business/education')
+      setStore('currentBusiness', 'education', 'session')
+      hashHistory.push('/business/education')
     }
     if (i === 4) {
-      setStore('business', 'repast', 'session')
-      hashHistory.push('/fed/business/repast')
+      setStore('currentBusiness', 'repast', 'session')
+      hashHistory.push('/business/repast')
     }
   }
   render() {
@@ -48,7 +48,7 @@ export default class businessSearch extends Component {
             }
           </ul>
         </div>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed') }>返回首页</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('') }>返回首页</p>
       </div>
     )
   }

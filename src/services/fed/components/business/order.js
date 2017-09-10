@@ -67,9 +67,9 @@ class Order extends Component {
     businessInfoList.push(businessInfo)
     setStore('businessList', businessList, 'session')
     setStore('businessInfoList', businessInfoList, 'session')
-    setStore('orderPrice', totalPrice, 'session')
+    setStore('totalPrice', totalPrice, 'session')
     const business = getStore('currentBusiness', 'session')
-    hashHistory.push(`/fed/business/${ business }/waimai/pay`)
+    hashHistory.push(`/business/${ business }/waimai/pay`)
   }
   render() {
     const { form } = this.props
@@ -145,7 +145,7 @@ class Order extends Component {
               </p>
               <p>
                 合计应付：¥
-                <span>{ totalPrice + (totalNum * 2) }</span>
+                <span>{ totalPrice }</span>
               </p>
             </div>
             <p className='bottom'>满¥90 免餐盒 免配送费</p>

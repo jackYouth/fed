@@ -3,7 +3,8 @@ import { Mask } from '@boluome/oto_saas_web_app_component'
 import { Icon } from 'antd-mobile'
 
 const CouponItem = ({ couponData }) => {
-  const { price, title, content, expired, status, isQp } = couponData
+  const { price, title, content, expired, status } = couponData
+  // , isQp
   let bg = require('../../img/coupon_red.png')
   let text = '领取'
   let bgColor = '#ef461b'
@@ -33,16 +34,17 @@ const CouponItem = ({ couponData }) => {
         <p>{ content }</p>
         <p>
           { `有效期：${ expired }` }
-          {
-            isQp &&
-            <span style={{ borderColor: `${ bgColor }`, color: `${ bgColor }` }}>取票专享</span>
-          }
           <span style={{ background: `${ bgColor }` }}>{ text }</span>
         </p>
       </div>
     </li>
   )
 }
+
+// {
+//   isQp &&
+//   <span style={{ borderColor: `${ bgColor }`, color: `${ bgColor }` }}>取票专享</span>
+// }
 
 export default CouponItem
 

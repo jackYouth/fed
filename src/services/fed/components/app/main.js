@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Icon, Toast } from 'antd-mobile'
-import { get, getStore, setStore } from '@boluome/common-lib'
+import { Icon } from 'antd-mobile'
+import { getStore, setStore } from '@boluome/common-lib'
 import { hashHistory } from 'react-router'
 
-import { getFedIndex } from '../../actions/app'
+import { getFedIndex, getResult } from '../../actions/app'
 
 import '../../styles/home.scss'
 
@@ -11,50 +11,41 @@ export default class Main extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      entradas: [],
+      entradas:     [],
+      currentIndex: 1,
     }
     this.handleChangeStatus = this.handleChangeStatus.bind(this)
   }
   componentDidMount() {
     const callback = data => {
+      data.unshift({ id: 'a', title: '大连市政便民信息' })
       this.setState({ entradas: data })
     }
     getFedIndex(callback)
   }
-  handleProduceCode() {
-    window.codeTimer = setInterval(this.getCodeStatus, 4000)
-    hashHistory.push('/fed/main/code')
+  handleProduceCode(subCategoriesId) {
+    setStore('subCategoriesId', subCategoriesId, 'session')
+    window.codeTimer = setInterval(getResult(this.getCodeStatus), 4000)
+    hashHistory.push('/main/code')
   }
-  getCodeStatus() {
-    get('/polling').then(({ code, data, msg }) => {
-      if (code === 200) {
-        if (data.type === 1) {
-          clearInterval(window.codeTimer)
-          setStore('business', 'education', 'session')
-          hashHistory.push('/fed/main/password')
-        }
-        if (data.type === 2) {
-          clearInterval(window.codeTimer)
-          setStore('business', 'repast', 'session')
-          hashHistory.push('/fed/main/password')
-        }
-      } else {
-        Toast.fail(msg)
-      }
-    })
+  getCodeStatus(type) {
+    if (type === 1) {
+      clearInterval(window.codeTimer)
+      setStore('business', 'education', 'session')
+      hashHistory.push('/main/password')
+    }
+    if (type === 2) {
+      clearInterval(window.codeTimer)
+      setStore('business', 'repast', 'session')
+      hashHistory.push('/main/password')
+    }
   }
-  handleChangeStatus(index) {
-    const { entradas } = this.state
-    const i = entradas.splice(index, 1)[0]
-    const ii = entradas.splice(0, 1)[0]
-    entradas.unshift(i)
-    entradas.unshift(ii)
-    console.log('entradas', entradas)
-    this.setState({ entradas })
+  handleChangeStatus(currentIndex) {
+    this.setState({ currentIndex })
   }
   render() {
     const isNewCustomer = getStore('isNewCustomer', 'session') ? getStore('isNewCustomer', 'session') : false
-    const { entradas } = this.state
+    const { entradas, currentIndex } = this.state
     console.log('entradas', entradas)
     return (
       <div className='home'>
@@ -81,13 +72,13 @@ export default class Main extends Component {
             </div>
             {
               entradas &&
-              entradas.map((item, i) => <SelectedItem handleChangeStatus={ this.handleChangeStatus } key={ item.title } entradaItem={ item } index={ i } />)
+              entradas.map((item, i) => <SelectedItem handleChangeStatus={ this.handleChangeStatus } data={ item } index={ i } active={ i === currentIndex || i === 0 } key={ item.title } />)
             }
             <div className='use-tips selected-item'>
               <p>本日剩余 <span>2</span> 次取票机会</p>
               <p>取票冷却 <span>360</span> 分钟</p>
             </div>
-            <div className='button' onClick={ () => this.handleProduceCode() }>生成二维码</div>
+            <div className='button' onClick={ () => this.handleProduceCode(entradas[currentIndex].id) }>生成二维码</div>
           </div>
         }
       </div>
@@ -95,11 +86,11 @@ export default class Main extends Component {
   }
 }
 
-const SelectedItem = ({ entradaItem, index, handleChangeStatus }) => {
-  const { title } = entradaItem
+const SelectedItem = ({ data, index, handleChangeStatus, active }) => {
+  const { title } = data
   return (
     <div className='selected-item'>
-      <Icon onClick={ (index !== 0 && index !== 1) ? () => handleChangeStatus(index) : '' } type={ index <= 1 ? require('../../img/svg/circle_a.svg') : require('../../img/svg/circle_7b.svg') } size='md' />
+      <Icon onClick={ !active ? () => handleChangeStatus(index) : '' } type={ active ? require('../../img/svg/circle_a.svg') : require('../../img/svg/circle_7b.svg') } size='md' />
       <p className='text'>{ title }</p>
     </div>
   )

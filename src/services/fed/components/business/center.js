@@ -32,7 +32,7 @@ const Center = () => {
       <ul className='bottom'>
         {
           list.map((o, i) => (
-            <LItem extra='查看详细' key={ o } arrow='horizontal' onClick={ () => hashHistory.push(`/fed/business/${ business }/center/${ i === 0 ? 'reserveInfo' : 'waimaiInfo' }`) }>
+            <LItem extra='查看详细' key={ o } arrow='horizontal' onClick={ () => hashHistory.push(`/business/${ business }/center/${ i === 0 ? 'reserveInfo' : 'waimaiInfo' }`) }>
               <div className='business-item'>
                 <Icon type={ i === 1 ? require('../../img/svg/waimai_info_title.svg') : require('../../img/svg/reserve.svg') } size='md' />
                 <span>{ o }</span>

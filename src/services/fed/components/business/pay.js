@@ -9,12 +9,10 @@ import '../../styles/business/pay-info.scss'
 const Pay = () => {
   // const businessInfoList = getStore('currentBusinessInfoList', 'session') ? getStore('currentBusinessInfoList', 'session') : []
   const businessList = getStore('businessList', 'session')
-  let totalPrice = 6
   let goodDescrible = '宫保鸡丁(微辣) * 1份¥98'
   if (businessList && businessList.lenght !== 0) {
     goodDescrible = ''
     businessList.forEach(o => {
-      totalPrice += Number(o.price)
       goodDescrible += `${ o.title }${ o.goodSpec ? o.goodSpec : '' } * ${ o.num }¥${ o.price }`
     })
   }
@@ -26,6 +24,7 @@ const Pay = () => {
     { name: '配送时间', describle: '立即(预计到达时间10:00)', icon: require('../../img/svg/time_70.svg') },
     { name: '备   注', describle: '3人餐具 别放花椒 多加米饭', icon: require('../../img/svg/tips_70.svg') },
   ]
+  const totalPrice = getStore('totalPrice', 'session')
   return (
     <div className='pay-info'>
       <div className='common-header'>
@@ -71,10 +70,10 @@ const Pay = () => {
           <Icon type={ require('../../img/svg/pay_style.svg') } size='md' />
           <span>余额支付（剩余198.68)</span>
           <span>支付方式</span>
-          <Icon type={ require('../../img/svg/arrow_down.svg') } size='xxs' />
+          <Icon type={ require('../../img/svg/arrow_down_09.svg') } size='xxs' />
         </div>
       </div>
-      <p className='fed-button' onClick={ () => hashHistory.push(`/fed/business/${ getStore('currentBusiness', 'session') }/waimai/paySuc`) }>立即支付</p>
+      <p className='fed-button' onClick={ () => hashHistory.push(`/business/${ getStore('currentBusiness', 'session') }/waimai/paySuc`) }>立即支付</p>
     </div>
   )
 }

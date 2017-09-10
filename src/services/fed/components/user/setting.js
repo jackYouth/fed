@@ -96,7 +96,7 @@ export default class Setting extends Component {
             <span>添加一张新卡</span>
           </p>
         </div>
-        <p className='fed-button' onClick={ () => hashHistory.push('/fed/user') }>保存返回</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/user') }>保存返回</p>
       </div>
     )
   }

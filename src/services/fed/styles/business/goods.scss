@@ -1,6 +1,7 @@
 @import "../common.scss";
 
 .goods {
+  height: calc(100% - 20px);
   .container {
     padding: 0 20px;
     .selectes {
@@ -29,59 +30,62 @@
       }
     }
   }
-  .good-item {
-    padding: 0 20px;
-    width: 100%;
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex;
-    margin-bottom: 25px;
-    .img-container {
-      @include s_blockDemo(156px, 156px);
-      margin-right: 45px;
-      img {
-        height: 156px;
-        display: block;
-        margin: 0 auto;
+  .goods-list {
+    padding-bottom: 130px;
+    .good-item {
+      padding: 0 20px;
+      width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      margin-bottom: 25px;
+      .img-container {
+        @include s_blockDemo(156px, 156px);
+        margin-right: 45px;
+        img {
+          height: 156px;
+          display: block;
+          margin: 0 auto;
+        }
       }
-    }
-    .right {
-      flex: 1;
-      p {
-        &:nth-of-type(1) {
-          @include s_fontDemo(24px, 24px, $font-4a);
-          margin-bottom: 5px;
-        }
-        &:nth-of-type(2) {
-          @include s_fontDemo(20px, 24px, #9b9b9b);
-        }
-        &:nth-of-type(3) {
-          @include s_fontDemo(20px, 24px, $fed_theme);
-          padding-top: 10px;
-          float: left;
-          span {
-            font-size: 36px;
+      .right {
+        flex: 1;
+        p {
+          &:nth-of-type(1) {
+            @include s_fontDemo(24px, 24px, $font-4a);
+            margin-bottom: 5px;
+          }
+          &:nth-of-type(2) {
+            @include s_fontDemo(20px, 24px, #9b9b9b);
+          }
+          &:nth-of-type(3) {
+            @include s_fontDemo(20px, 24px, $fed_theme);
+            padding-top: 10px;
+            float: left;
+            span {
+              font-size: 36px;
+            }
           }
         }
-      }
-      .discount {
-        display: block;
-        text-align: center;
-        width: 100px;
-        margin-top: 5px;
-        @include s_fontDemo(20px, 34px, #f6a623);
-        border: 1px solid #f6a623;
-      }
-      .spec {
-        float: right;
-        @include s_blockDemo(100px, 34px);
-        @include s_fontDemo(20px, 34px, $fed_theme);
-        border: 1px solid $fed_theme;
-        text-align: center;
-        border-radius: 17px;
-      }
-      .add-good {
-        float: right;
+        .discount {
+          display: block;
+          text-align: center;
+          width: 100px;
+          margin-top: 5px;
+          @include s_fontDemo(20px, 34px, #f6a623);
+          border: 1px solid #f6a623;
+        }
+        .spec {
+          float: right;
+          @include s_blockDemo(100px, 34px);
+          @include s_fontDemo(20px, 34px, $fed_theme);
+          border: 1px solid $fed_theme;
+          text-align: center;
+          border-radius: 17px;
+        }
+        .add-good {
+          float: right;
+        }
       }
     }
   }

@@ -91,11 +91,13 @@
     height: 80px;
     position: relative;
     .pay-style-container {
-      @include s_allCenter;
+      height: 80px;
       overflow: hidden;
-      width: 75%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       span {
-        @include s_fontDemo(22px, 80px, $font-4a);
+        @include s_fontDemo(22px, 22px, $font-4a);
         font-weight: normal;
         &:last-of-type {
           font-weight: bold;
@@ -107,9 +109,7 @@
       .am-icon {
         float: left;
         margin-right: 20px;
-        margin-top: 15px;
         &:last-of-type {
-          margin-top: 25px;
           float: right;
         }
       }

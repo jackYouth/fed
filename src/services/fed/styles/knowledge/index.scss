@@ -2,6 +2,8 @@
 
 .konwledge {
   padding: 0 25px;
+  overflow-y: auto;
+  height: 100%;
   .header {
     display: flex;
     .select-header-item {
@@ -19,6 +21,7 @@
     }
   }
   .set-knowledge-list {
+    min-height: calc(100% - 300px);
     .set-knowledge-item {
       border-left: 4px solid $theme;
       padding: 5px 30px 10px 45px;
@@ -69,14 +72,14 @@
     text-align: center;
     background: none;
     border: 1px solid $font-4a;
-    @include s_center;
-    bottom: 120px;
+    width: auto;
+    margin: 0 auto 20px;
   }
   .set-button {
     text-align: center;
     background: $theme;
+    width: auto;
+    margin: 0 auto 20px;
     color: $font-ff;
-    @include s_center;
-    bottom: 20px;
   }
 }

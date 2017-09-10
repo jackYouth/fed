@@ -15,24 +15,26 @@ export default class Business extends Component {
     const business = getStore('currentBusiness', 'session')
     if (el.index === 2) {
       if (business === 'education') {
-        hashHistory.push(`/fed/business/${ business }/selfCourse`)
+        hashHistory.push(`/business/${ business }/selfCourse`)
         return
       }
-      hashHistory.push(`/fed/business/${ business }/reserve`)
+      hashHistory.push(`/business/${ business }/reserve`)
     }
-    if (el.index === 3 && business === 'education') hashHistory.push(`/fed/business/${ business }/schedule`)
+    if (el.index === 3 && business === 'education') hashHistory.push(`/business/${ business }/schedule`)
     if (el.index === 4) {
       if (business === 'education') {
-        hashHistory.push(`/fed/business/${ business }/reserve`)
+        hashHistory.push(`/business/${ business }/reserve`)
         return
       }
       // document.querySelector('.business-container-bottom').style.zIndex = '-2'
-      hashHistory.push(`/fed/business/${ business }/waimai`)
+      hashHistory.push(`/business/${ business }/waimai`)
     }
-    if (el.index === 5) hashHistory.push(`/fed/business/${ business }/promotion`)
+    if (el.index === 5) hashHistory.push(`/business/${ business }/promotion`)
   }
   render() {
-    const { flagBoolean, service, carouselDatas, featureDatas, commentsInfo, commentList, handleChangeSort, currentSortIndex = 0 } = this.props
+    const { service, carouselDatas, featureDatas, commentsInfo, commentList, handleChangeSort, currentSortIndex = 0 } = this.props
+    // flagBoolean表示是不是教育商家
+    const flagBoolean = location.hash.split('/')[2] === 'education'
     return (
       <div className={ flagBoolean ? 'business educatioin-bg' : 'business' }>
         {

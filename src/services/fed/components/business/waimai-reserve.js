@@ -70,7 +70,7 @@ export default class WaimaiReserve extends React.Component {
     reserveList.push(reserveInfo)
     setStore('reserveList', reserveList, 'session')
     const business = getStore('currentBusiness', 'session')
-    hashHistory.push(`/fed/business/${ business }/reserve/suc`)
+    hashHistory.push(`/business/${ business }/reserve/suc`)
   }
   handlePhoneIconClick() {
     this.phoneIpt.focus()
