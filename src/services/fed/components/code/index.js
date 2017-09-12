@@ -41,11 +41,21 @@ export default class ProduceCode extends React.Component {
           </p>
         </div>
         <div className='fed-button'>
-          <p className='footer-container' onClick={ () => hashHistory.push('/main/nearDevice') }>
+          <p className='footer-container' onClick={ () => {
+            if (window.codeTimer) clearInterval(window.codeTimer)
+            hashHistory.push('/main/nearDevice')
+          } }
+          >
             <Icon type={ require('../../img/svg/location_d0.svg') } size='md' />
             <span>附近的智能终端</span>
           </p>
-          <p className='fed-button return-index' onClick={ () => hashHistory.push('/') }>返回首页</p>
+          <p className='fed-button return-index' onClick={ () => {
+            if (window.codeTimer) clearInterval(window.codeTimer)
+            hashHistory.push('/')
+          } }
+          >
+            返回首页
+          </p>
         </div>
       </div>
     )

@@ -14,6 +14,7 @@ export default class Main extends Component {
       entradas:     [],
       currentIndex: 1,
     }
+    if (window.codeTimer) clearInterval(window.codeTimer)
     this.handleChangeStatus = this.handleChangeStatus.bind(this)
   }
   componentDidMount() {
@@ -25,7 +26,7 @@ export default class Main extends Component {
   }
   handleProduceCode(subCategoriesId) {
     setStore('subCategoriesId', subCategoriesId, 'session')
-    window.codeTimer = setInterval(getResult(this.getCodeStatus), 4000)
+    window.codeTimer = setInterval(() => getResult(this.getCodeStatus), 4000)
     hashHistory.push('/main/code')
   }
   getCodeStatus(type) {

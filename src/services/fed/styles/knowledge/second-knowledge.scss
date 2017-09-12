@@ -40,11 +40,13 @@
         position: absolute;
         margin-bottom: 15px;
         .img {
+          overflow: hidden;
+          position: relative;
           height: 520px;
           img {
             height: 520px;
             display: block;
-            margin: 0 auto;
+            @include s_allCenter;
           }
         }
         .type {

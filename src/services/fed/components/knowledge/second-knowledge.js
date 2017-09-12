@@ -50,40 +50,8 @@ export default class SecondKnowledge extends Component {
     handleContainerClose()
   }
 
-  handleStart(e) {
-    const { clientX } = e.touches[0]
-    this.beginPoint = { clientX }
-  }
-
-  handleEnd(e) {
-    let { currentLeft } = this.state
-    const { limit } = this.state
-    const { clientX } = e.changedTouches[0]
-    this.endPoint = { clientX }
-    // 右滑
-    if (clientX > this.beginPoint.clientX && currentLeft > 0) {
-      currentLeft--
-      console.log('左滑', currentLeft)
-    }
-    // 左滑
-    if (clientX < this.beginPoint.clientX && currentLeft < limit - 1) {
-      currentLeft++
-      console.log('右滑', currentLeft)
-    }
-    this.setState({ currentLeft })
-  }
-
   render() {
-    // const knowledgeDatas = [
-    //   { img: require('../../img/knowledge_banner_1.png'), id: '1' },
-    //   { img: require('../../img/knowledge_banner_1.png'), id: '2' },
-    //   { img: require('../../img/knowledge_banner_1.png'), id: '3' },
-    //   { img: require('../../img/knowledge_banner_1.png'), id: '4' },
-    //   { img: require('../../img/knowledge_banner_1.png'), id: '5' },
-    //   { img: require('../../img/knowledge_banner_1.png'), id: '6' },
-    // ]
     const { datas, currentLeft } = this.state
-    console.log('secondDatas', datas)
     if (!datas) return <div />
     return (
       <div className='knowlege-index'>
@@ -94,7 +62,7 @@ export default class SecondKnowledge extends Component {
         {
           datas && datas.length > 0 &&
           <div className='knowledge-list-container'>
-            <ul style={{ marginLeft: `-${ currentLeft * 4.9 }rem`, width: `${ datas.length * 100 }%` }} className={ datas.length < 2 ? 'knowledge-list single' : 'knowledge-list' } onTouchStart={ e => this.handleStart(e) } onTouchEnd={ e => this.handleEnd(e) }>
+            <ul className='knowledge-list'>
               {
                 datas.map(item => <KnowledgeItem key={ item.id } { ...{ handleClick: this.handleClick, ...item } } />)
               }
@@ -123,7 +91,7 @@ const AllKnowledge = ({ handleContainerClose, handleFirstKnowledgeClick }) => {
         className='knowledge-carousel'
         autoplay={ Boolean('') }
         infinite
-        selectedIndex={ 1 }
+        selectedIndex={ 0 }
         swipeSpeed={ 35 }
         style={{ width: '6.5rem' }}
         beforeChange={ (from, to) => console.log(`slide from ${ from } to ${ to }`) }

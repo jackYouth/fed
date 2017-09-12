@@ -15,9 +15,11 @@ import User from '../User'
 export default class App extends Component {
   constructor(props) {
     super(props)
+    console.log(location.hash, 222222)
+    const selectedTab = location.hash.split('?')[1] ? location.hash.split('?')[1] : 'tab1'
     this.state = {
-      selectedTab: 'tab1',
-      hidden:      false,
+      selectedTab,
+      hidden: false,
     }
   }
   render() {

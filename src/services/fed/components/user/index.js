@@ -36,7 +36,7 @@ export default class UserCenter extends Component {
           </div>
           <div className='my-item' onClick={ () => hashHistory.push('/knowledge') }>
             <span className='point-green' />
-            <span>我的我的知识库</span>
+            <span>我的知识库</span>
           </div>
           <div className='my-item' onClick={ () => hashHistory.push('/user/achieve') }>
             <span className='point-green' />

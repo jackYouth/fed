@@ -72,7 +72,7 @@ export default class PriceDetail extends Component {
             ))
           }
         </ul>
-        <p className='fed-button' onClick={ () => hashHistory.push('/user') }>返回个人中心</p>
+        <p className='fed-button' onClick={ () => hashHistory.push('/?tab4') }>返回个人中心</p>
       </div>
     )
   }
