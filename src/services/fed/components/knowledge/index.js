@@ -22,6 +22,7 @@ export default class SetKnowledge extends Component {
     }
     this.handleClickSelect = this.handleClickSelect.bind(this)
     this.handleChangeStatus = this.handleChangeStatus.bind(this)
+    console.log(11111111)
   }
   componentWillMount() {
     const callback = data => {
@@ -34,6 +35,10 @@ export default class SetKnowledge extends Component {
       this.setState({ setKnowledgeList })
     }
     getKnowledgeIndex(callback)
+    console.log(2222222222)
+  }
+  componentWillReceiveProps(nextProps) {
+    console.log(8798798789798, nextProps)
   }
   handleClickSelect(index) {
     const { currentIndex } = this.state

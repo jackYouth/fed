@@ -36,7 +36,7 @@ export default class FirstKnowledge extends Component {
   }
   handleClick(id) {
     setStore('firstId', id, 'session')
-    hashHistory.push('/knowledge/second')
+    hashHistory.push('/?tab2')
   }
   render() {
     const datas = [

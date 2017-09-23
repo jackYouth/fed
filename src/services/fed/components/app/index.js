@@ -9,8 +9,10 @@ import { TabBar, Icon } from 'antd-mobile'
 
 import Main from './main'
 import Knowledge from '../knowledge'
+import SecondKnowledge from '../knowledge/second-knowledge'
 import Contribution from '../contribution'
 import User from '../User'
+import MyAchieve from '../user/my-achieve'
 
 export default class App extends Component {
   constructor(props) {
@@ -64,7 +66,11 @@ export default class App extends Component {
             }
             data-seed='logId1'
           >
-            <Knowledge mock='知识库' />
+            {
+              location.hash.split('?')[1] === 'tab2' ?
+                <SecondKnowledge /> :
+                <Knowledge mock='知识库' />
+            }
           </TabBar.Item>
           <TabBar.Item
             icon={ <Icon type={ require('../../img/svg/idx_tab_bar3.svg') } size='md' /> }
@@ -87,16 +93,21 @@ export default class App extends Component {
             selectedIcon={ <Icon type={ require('../../img/svg/idx_tab_bar_ac_4.svg') } size='md' /> }
             title='我'
             key='我'
-            selected={ this.state.selectedTab === 'tab4' }
+            selected={ this.state.selectedTab === 'tab4' || this.state.selectedTab === 'achieve' }
             onPress={
               () => {
                 this.setState({
                   selectedTab: 'tab4',
                 })
+                hashHistory.push('/?tab4')
               }
             }
           >
-            <User mock='我' />
+            {
+              location.hash.split('?')[1] === 'achieve' ?
+                <MyAchieve /> :
+                <User mock='我' />
+            }
           </TabBar.Item>
         </TabBar>
       </div>

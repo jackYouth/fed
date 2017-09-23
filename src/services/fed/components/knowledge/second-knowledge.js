@@ -15,9 +15,7 @@ export default class SecondKnowledge extends Component {
     super(props)
     // limit: 当前二级分类数据的长度， currentLeft表示当前list容器的marginLeft值
     this.state = {
-      datas:       {},
-      currentLeft: 0,
-      limit:       1,
+      datas: {},
     }
     this.getData = this.getData.bind(this)
     this.handleFirstKnowledgeClick = this.handleFirstKnowledgeClick.bind(this)
@@ -27,19 +25,7 @@ export default class SecondKnowledge extends Component {
     getSecondCategory(id, this.getData)
   }
   getData(datas) {
-    const begin = JSON.parse(JSON.stringify(datas[0]))
-    const after = JSON.parse(JSON.stringify(datas[datas.length - 1]))
-    begin.id = 'b'
-    after.id = 'a'
-    if (datas.length > 1) {
-      datas.push(begin)
-      datas.unshift(after)
-    }
-    datas.map(o => {
-      if (!o.img) o.img = require('../../img/knowledge_banner_1.png')
-      return o
-    })
-    this.setState({ datas, limit: datas.length - 2 })
+    this.setState({ datas })
   }
   handleClick(id) {
     addSecondCategory(id)
@@ -51,7 +37,7 @@ export default class SecondKnowledge extends Component {
   }
 
   render() {
-    const { datas, currentLeft } = this.state
+    const { datas } = this.state
     if (!datas) return <div />
     return (
       <div className='knowlege-index'>
@@ -62,7 +48,7 @@ export default class SecondKnowledge extends Component {
         {
           datas && datas.length > 0 &&
           <div className='knowledge-list-container'>
-            <ul className='knowledge-list'>
+            <ul className={ datas.length === 1 ? 'single knowledge-list' : 'knowledge-list' }>
               {
                 datas.map(item => <KnowledgeItem key={ item.id } { ...{ handleClick: this.handleClick, ...item } } />)
               }

@@ -29,15 +29,17 @@ export default class Main extends Component {
     window.codeTimer = setInterval(() => getResult(this.getCodeStatus), 4000)
     hashHistory.push('/main/code')
   }
-  getCodeStatus(type) {
+  getCodeStatus(type, money) {
     if (type === 1) {
       clearInterval(window.codeTimer)
-      setStore('business', 'education', 'session')
+      setStore('currentBusiness', 'education', 'session')
+      setStore('codeMoney', money, 'session')
       hashHistory.push('/main/password')
     }
     if (type === 2) {
       clearInterval(window.codeTimer)
-      setStore('business', 'repast', 'session')
+      setStore('currentBusiness', 'repast', 'session')
+      setStore('codeMoney', money, 'session')
       hashHistory.push('/main/password')
     }
   }

@@ -50,7 +50,8 @@
     }
   }
   .fed-button {
-    @include s_center;
+    position: relative;
+    margin-top: 80px;
     width: 90%;
     bottom: 30px;
     background: #09bb07;

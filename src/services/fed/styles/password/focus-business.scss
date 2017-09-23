@@ -1,6 +1,9 @@
 @import "../common.scss";
 
 .focus-business {
+  background-color: #fff;
+  height: 100%;
+  overflow: auto;
   .header {
     height: 430px;
     background: url(../../img/waimai_log1.png) center center no-repeat;
@@ -12,12 +15,18 @@
       padding-left: 80px;
       margin-bottom: 27px;
       overflow: hidden;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
       .am-icon {
-        float: left;
         margin-right: 20px;
+        width: 30px;
+        height: 30px;
       }
       span {
-        float: left;
+        -webkit-box-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
         @include s_fontDemo(22px, 30px, $font-4a);
       }
     }
@@ -25,6 +34,7 @@
   .feature-service {
     overflow: hidden;
     padding: 0 30px;
+    margin-bottom: 30px;
     ul {
       overflow: hidden;
       margin-bottom: 40px;
@@ -51,6 +61,7 @@
   }
   .fed-button {
     width: 90%;
+    margin-bottom: 30px;
     letter-spacing: 24px;
   }
 }

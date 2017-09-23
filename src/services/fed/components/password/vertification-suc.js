@@ -1,4 +1,5 @@
 import React from 'react'
+import { getStore } from '@boluome/common-lib'
 import { Icon } from 'antd-mobile'
 import { hashHistory } from 'react-router'
 
@@ -6,6 +7,7 @@ import '../../styles/password/verification-suc.scss'
 
 const VerificationSuc = () => {
   const businessSlogan = { titleLeft: 'FEDU', titleRight: '联邦教育', content: '首次关注送¥ 1.00学习基金' }
+  const codeMoney = getStore('codeMoney', 'session')
   return (
     <div className='verification-suc'>
       <div className='header'>
@@ -13,7 +15,7 @@ const VerificationSuc = () => {
         <p>宾果</p>
         <p>
           ¥
-          <span> 4.39</span>
+          <span> { codeMoney }</span>
         </p>
         <p>联邦教育向您赠予学习基金</p>
       </div>

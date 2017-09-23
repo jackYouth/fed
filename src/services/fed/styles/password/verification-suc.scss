@@ -19,7 +19,7 @@
       }
       &:nth-of-type(2) {
         @include s_fontDemo(36px, 100px, $font-4a);
-        width: 210px;
+        width: 310px;
         margin: 0 auto;
         border-bottom: 1px dashed $fed_theme;
         span {
